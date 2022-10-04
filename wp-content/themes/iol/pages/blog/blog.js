@@ -1,0 +1,2 @@
+wp.blocks.registerBlockType('iolblock/blog', {title: 'blog Component',edit: () => {return wp.element.createElement('div',{className:'our-placeholder-block',},'blog Component render')},save: () => {return null},})            
+               

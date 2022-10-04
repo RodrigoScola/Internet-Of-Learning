@@ -1,0 +1,2 @@
+wp.blocks.registerBlockType('iolblock/animations', {title: 'animations Component',edit: () => {return wp.element.createElement('div',{className:'our-placeholder-block',},'animations Component render')},save: () => {return null},})            
+               

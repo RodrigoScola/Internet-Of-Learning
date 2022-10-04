@@ -1,0 +1,2 @@
+wp.blocks.registerBlockType('iolblock/search-list', {title: 'search-list Component',edit: () => {return wp.element.createElement('div',{className:'our-placeholder-block',},'search-list Component render')},save: () => {return null},})            
+               

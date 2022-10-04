@@ -1,0 +1,2 @@
+wp.blocks.registerBlockType('iolblock/inputs', {title: 'inputs Component',edit: () => {return wp.element.createElement('div',{className:'our-placeholder-block',},'inputs Component render')},save: () => {return null},})            
+               

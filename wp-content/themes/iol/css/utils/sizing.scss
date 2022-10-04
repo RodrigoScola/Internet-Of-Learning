@@ -1,0 +1,61 @@
+.w {
+     @for $i from 1 through 10 {
+          &-#{calc($i * 10)} {
+               width: #{calc($i * 10)} + '%';
+          }
+     }
+     &-fit {
+          width: fit-content !important;
+           min-width: max-content;
+     }
+    
+}
+
+.min-w {
+     @for $i from 1 through 20 {
+          &-#{calc($i * 10)} {
+               min-width: #{calc($i * 10)} + 'px';
+          }
+     }
+}
+.max-w {
+     @for $i from 1 through 20 {
+          &-#{calc($i * 50)} {
+               min-width: #{calc($i * 50)} + 'px';
+          }
+     }
+}
+
+.h {
+     @for $i from 1 through 20 {
+          &-#{$i} {
+               height: #{$i} + 'vh' !important;
+          }
+     }
+     &-fit {
+          height: fit-content;
+     }
+     &-max {
+          height: max-content !important;
+     }
+     &-auto {
+          height: auto;
+     }
+}
+
+.maxh {
+     @for $i from 1 through 10 {
+          &-#{$i} {
+               $nv : calc($i * 10);
+               max-height: #{$nv} + 'vh';
+          }
+     }
+}
+.minh {
+     @for $i from 1 through 10 {
+          &-#{$i} {
+               $nv : calc($i * 10);
+               min-height: #{$nv} + 'vh';
+          }
+     }
+}

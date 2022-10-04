@@ -1,0 +1,11 @@
+$sizes: (sm : 16px, md : 24px, lg: 48px, gnt: 64px);
+.icon {
+    @each $size, $value in $sizes {
+     &-#{$size} {
+        * {
+            width: $value;
+          height: $value;
+        }
+     }
+    }
+}

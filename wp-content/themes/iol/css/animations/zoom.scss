@@ -1,0 +1,37 @@
+@mixin zoomAnim ($name, $initial, $end) {
+    @keyframes #{$name} {
+      12% {
+          transform: scale($initial);
+     opacity: 0;
+
+     }
+     100% {
+          transform: scale($end);
+          opacity: 1;
+
+     }
+     
+    }
+}
+
+.zoom {
+     &-in {
+          animation: alternate 0.12s zoom_in;
+          &_click:active {
+          animation: ease-out 0.12s zoom_in;
+          }
+     }
+     &-in_hover:hover {
+          animation: forwards 0.12s cardHoverAnim;
+          
+     }
+     &-out {
+          animation: ease 0.12s zoom_out;
+     &_click:focus {
+          animation: ease-out 0.12s zoom_out;
+          }
+     }
+     
+}
+@include zoomAnim('zoom_in', 0.1 , 1.1 );
+@include zoomAnim('zoom_out', 1.1 , 0.1 );

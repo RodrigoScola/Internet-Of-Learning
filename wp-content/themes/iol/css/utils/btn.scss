@@ -1,0 +1,182 @@
+
+@mixin roundElement($direction : default, $amount: 40px) {
+     @if $direction == right {
+           border-top-left-radius: 0 ;
+               border-bottom-left-radius: 0;
+               border-top-right-radius: $amount;
+               border-bottom-right-radius: $amount;
+     }
+     @else if $direction == left {
+           border-top-left-radius: $amount ;
+               border-bottom-left-radius: $amount;
+               border-top-right-radius: 0;
+               border-bottom-right-radius: 0;
+     }
+     @else if $direction == up {
+           border-top-left-radius: $amount ;
+               border-bottom-left-radius: 0;
+               border-top-right-radius: $amount;
+               border-bottom-right-radius: 0;
+     } @else if $direction == down  {
+           border-top-left-radius: 0 ;
+               border-bottom-left-radius: $amount;
+               border-top-right-radius: 0;
+               border-bottom-right-radius: $amount;
+     }
+     @else {
+           border-top-left-radius: $amount ;
+               border-bottom-left-radius: $amount;
+               border-top-right-radius: $amount;
+               border-bottom-right-radius: $amount;
+     }
+}
+@mixin elementColor($color) {
+     background: $color;
+     border-color: $color;
+}
+@mixin hollowElement($color) {
+     color: $color;
+          background-color: transparent !important;
+          border-color: $color;
+}
+.btn {
+     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+     border-radius: 8px;
+     text-align: center ;
+      white-space: pre-line;
+      overflow-wrap: break-word;
+    word-break: keep-all !important;
+    -ms-word-break: break-word;
+      word-break: break-word;
+      -ms-hyphens: auto;
+      -moz-hyphens: auto;
+      -webkit-hyphens: auto;
+      hyphens: auto;
+         direction: ltr;
+    white-space: initial;
+     color:black;
+border: 1px solid rgba(0, 0, 0, 0.05);
+
+   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+padding: 16px 32px;    
+     &-sm {
+padding: 4px 12px;    
+ 
+     }
+     &-xsm {
+padding: 2px 6px;    
+ 
+     }
+     &-md {
+padding: 8px 16px;    
+
+     }
+     &-lg {
+          font-size: 16px;
+padding: 16px 32px;    
+     }
+    
+     
+
+     &-round {
+          border-radius: 20em;
+           @include roundElement(default, 40px);    
+          &_right {
+           @include roundElement(right);    
+          }
+          &_left {
+           @include roundElement(left);    
+          }
+          &_up {
+           @include roundElement(up);    
+          }
+          &_down {
+           @include roundElement(down);    
+          }
+          &_semi {
+               @include roundElement(default, 16px );
+          }
+          &_sharp {
+               @include roundElement(default, 6px )
+          }
+     }
+     
+}
+
+
+ @each $key, $value in $colors {
+          .btn-#{"" +$key} {
+               @include elementColor($value);
+            
+               color: black;
+                &-hollow {
+               color: $value;
+               transition: 0.4s;
+               @include hollowElement($value);
+              
+              &:hover{
+               background-color: darken($color: $value, $amount: 10) !important;
+               @if $key == yellow {
+
+               color: black;
+               } @else {
+                    color: rgb(255, 255, 255);
+               }
+              }
+              } 
+               &-dt {
+                    $newColor: darken($value, 5%);
+                    background: linear-gradient($value 20%, $newColor 100%);
+               }
+                     
+               &-dark {
+                    $newColor: darken($value, 5%);
+                    background-color: $newColor;
+               }
+               &:hover {
+                    @include elementColor(darken($value, 12%));
+                    transition: 0.2s;
+                    
+               }
+               &:disabled {
+                    $newColor : fade-out($value,0.3);
+                   @include elementColor($newColor);
+                    transition: 0.2s;
+                    &:hover {
+                         $newColor : fade-out($value,0.1);
+                   @include elementColor($newColor);
+                    transition: 0.2s;
+                    }
+               }
+               &:active{
+                   
+                   background-color: lighten($color: $value, $amount: 20);
+               }
+
+          }   
+     }
+
+     @keyframes buttonclick {
+          0% {
+               color: inherit;
+          }
+          50% {
+               color: white;
+          }
+          100% {
+               color: inherit;
+          }
+     }
+
+#searchButton {
+     &::after {
+          position: relative;
+          top: -5px;
+          content: 'Search';
+     }
+}
+@media only screen and (max-width: 1000px) {
+     #searchButton::after {
+          content: '';
+     }
+}

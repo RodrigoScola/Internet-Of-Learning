@@ -1,0 +1,67 @@
+/* 3rd party packages */
+@import "normalize.css";
+@import "../node_modules/@glidejs/glide/dist/css/glide.core.min.css";
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+// Roboto Font
+// change to functions.php
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+@import "variables.scss";
+// elements styles
+@import "utils/btn.scss";
+@import "utils/icons.scss";
+@import "utils/list.scss";
+@import "utils/text.scss";
+@import "utils/input.scss";
+@import "utils/containers.scss";
+@import "utils/divider.scss";
+@import "utils/border.scss";
+@import "utils/margins.scss";
+@import "utils/sizing.scss";
+@import "utils/round.scss";
+@import "utils/tag.scss";
+@import "utils/flex.scss";
+
+// components
+
+//navs 
+@import "./components/nav/nav-dashboard.scss";
+@import "./components/nav/menu.scss";
+
+@import "header.scss" ;
+@import "./components/footer";
+@import "./components/search";
+@import "./components/cards";
+@import "./components/courses.scss";
+@import "./components/hero.scss";
+@import "./components/stars.scss";
+@import "./components/pricing.scss";
+@import "./components/grid.scss";
+@import "./components/accordion.scss";
+@import "./components/form.scss";
+@import "./components/um.scss";
+@import "./components/profile.scss";
+@import "./components/comment.scss";
+@import "./components/pagination.scss";
+@import "./components/review.scss";
+@import "./components/table.scss";
+@import "./components/tooltip.scss";
+@import "./components/listing.scss";
+
+
+// actual pages 
+@import "./pages/course.scss";
+@import "./pages/search.scss";
+@import './pages/dashboard.scss';
+@import './pages/login.scss';
+@import './pages/page.scss';
+@import './pages/blog.scss';
+
+
+// animations 
+@import "./animations/zoom.scss";
+@import "./animations/submitAnimation.scss";
+@import "./animations/fade.scss";
+@import "./animations/slide.scss";

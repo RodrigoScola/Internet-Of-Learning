@@ -1,0 +1,2 @@
+wp.blocks.registerBlockType('iolblock/listing', {title: 'listing Component',edit: () => {return wp.element.createElement('div',{className:'our-placeholder-block',},'listing Component render')},save: () => {return null},})            
+               

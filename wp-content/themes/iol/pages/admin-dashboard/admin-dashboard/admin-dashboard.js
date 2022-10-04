@@ -1,0 +1,2 @@
+wp.blocks.registerBlockType('iolblock/admin-dashboard', {title: 'admin-dashboard Component',edit: () => {return wp.element.createElement('div',{className:'our-placeholder-block',},'admin-dashboard Component render')},save: () => {return null},})            
+               

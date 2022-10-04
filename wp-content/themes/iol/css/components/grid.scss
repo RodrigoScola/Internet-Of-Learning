@@ -1,0 +1,146 @@
+$max: 5;
+@for $i from 1 through $max {
+     .gridrow-#{$i} {
+          grid-template-rows: 1fr;
+          @for $j from 1 through $i {
+               .griditem-#{$j} {
+                    grid-row: $i / span 1;
+               }
+          }
+     }
+}
+
+
+
+
+
+ .gridcol-1 {
+          display: grid;
+          grid-template-columns: 1fr;
+               .griditem-1 {
+                    grid-column: auto;
+               }          
+     }
+
+      .gridcol-2 {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          @for $j from 1 through 2 {
+               .griditem-#{$j} {
+                 
+                    grid-column: $j /  span 1;
+
+                    @for $k from $j to 3 {
+                         &-#{$k} {
+                    
+                          
+                              grid-column: $j / span $k;
+                         
+                         }
+                    }
+               }
+          }
+     }
+      .gridcol-3 {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          div {
+               height: min-content ;
+          }
+          
+          @for $j from 1 through 2 {
+               .griditem-#{$j} {
+                 
+                    grid-column: $j /  span 1;
+                    @for $k from $j to 3 {
+                         &-#{$k} {
+                              grid-column: $j /  span $k;
+                         }
+                    }
+               }
+          }
+     }
+
+      .gridcol-4 {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          @for $j from 1 through 3 {
+               .griditem-#{$j} {
+                 
+                    grid-column: $j /  span 1;
+                    @for $k from $j to 4 {
+                         &-#{$k} {
+                              grid-column: $j /  span $k;
+                         }
+                    }
+               }
+          }
+     }
+
+      .gridcol-5 {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+          @for $j from 1 through 5 {
+               .griditem-#{$j} {
+                   
+                    grid-column: $j /  span 1;
+                    @for $k from $j to 5 {
+                         &-#{$k} {
+                              grid-column: $j /  span $k;
+                         }
+                    }
+               }
+          }
+     }
+     
+      .gridcol-6 {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+          @for $j from 1 through 5 {
+               
+               .griditem-#{$j} {
+                    grid-column: $j /  span 1;
+                    @for $k from $j to 6 {
+                         &-#{$k} {
+                              grid-column: $j /  span $k;
+                         }
+                    }
+               }
+          }
+     }
+
+.gap {
+     gap: 1em;
+     @for $i from 2 to 10 {
+          &-#{$i} {
+               gap: #{$i}em;
+          }
+          &-0#{$i} {
+               $newV: calc($i / 10);
+               gap: #{$newV}em;
+          }
+          
+     }
+}
+
+
+
+
+
+
+
+
+     
+@for $i from 1 through $max {
+     @media screen and (max-width: 600px) {
+
+     .gridcol-#{$i} {
+          grid-template-columns: 1fr !important;
+          @for $j from 1 through $i {
+               .griditem-#{$j} {
+                    grid-column: 1 / 1;
+               }
+          }
+     }
+     }
+}

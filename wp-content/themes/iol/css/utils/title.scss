@@ -1,0 +1,73 @@
+@mixin titleSize($size: md) {
+     @if $size == md {
+     font-style: normal;
+     line-height: 45px;
+     font-size: 39px;
+     letter-spacing: 0.02em;
+     }
+     @else if $size == lg {
+          font-size: 46px;
+     }
+     @else if $size == gnt {
+          font-size: 80px;
+
+     }
+     @else if $size == xsm {
+       font-style: normal;
+     line-height: 33px;
+     font-size: 20px;
+     letter-spacing: 0.02em;
+     }
+     @else if $size == sm{
+          font-style: normal;
+     line-height: 33px;
+     font-size: 25px;
+     letter-spacing: 0.02em;
+     }
+}
+
+
+.title {
+     
+     text-align: center;
+     font-family: 'Roboto Slab';
+     font-weight: 700;
+     &-lg {
+        @include titleSize(lg);
+     }
+     &-sm {
+     @include titleSize(sm);
+}
+     &-md {
+         @include titleSize(md);
+     }
+     &-xsm {
+          @include titleSize(xsm)
+     }
+     &-gnt {
+          @include titleSize(gnt)
+     }
+}
+
+.subtitle {
+     text-align: left;
+     font-family: 'Roboto';
+     font-size: 33px;
+     line-height: 38.67px;
+          text-align: center;
+     &-sm {
+     font-size: 20px;
+     }
+     &-xsm {
+     font-size: 16px;
+     }
+}
+.quote {
+     font-style: italic;
+}
+.quote::before{
+     content: '" ';
+}
+.quote::after {
+     content: ' "';
+}

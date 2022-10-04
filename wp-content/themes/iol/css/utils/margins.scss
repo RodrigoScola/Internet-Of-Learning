@@ -1,0 +1,139 @@
+
+$directions: (
+     t: 'top',
+     b: 'bottom',
+     l: 'left',
+     r:'right',
+     v: 'vertical',
+     h: 'horizontal'
+);
+
+@mixin prefix ($prefix, $value, $property) {
+     
+     @if $property == horizontal {
+        
+       #{$prefix}-left:  #{$value} + "em" ;
+       #{$prefix}-right:  #{$value} + "em" ;
+
+     }
+     @else if $property == vertical {
+     #{$prefix}: #{$value} + "em" + " " + 0;
+     // #{$prefix}-bottom: #{$value} + "em";
+
+     }
+     @else if $property == null {
+           #{$prefix}: 0;
+     }
+     
+      @else {
+
+     #{$prefix}-#{$property}: #{$value} + "em";
+     }
+}
+
+@mixin calculatePadding($type,$key, $direction, $currval) {
+
+
+     .#{$type}#{$key} {
+          
+          @for $j from 1 through 10 {
+             @if $j < 10 {
+
+          &-0#{$j} {
+                    $val: calc($j / 10);
+                    @include prefix($currval,$val ,$direction )
+                    
+               }
+             }
+              
+
+               &-#{$j} {
+                    @include prefix($currval,$j ,$direction )
+               }
+                 
+          }
+     }
+}
+
+
+    @each $key, $direction in $directions {
+     
+         @include calculatePadding(p,$key, $direction, padding );
+         @include calculatePadding(m,$key, $direction, margin );
+  
+
+     }
+    
+     @for $i from 0 through 10 {
+    
+     .m-#{$i} {
+             margin: #{$i} + 'em';
+          }
+    
+     }
+     @for $i from 0 through 10 {
+    
+     .m-0#{$i} {
+          $newV: calc($i / 10);
+             margin: #{$newV} + 'em';
+          }
+    
+     }
+
+
+          @for $i from 0 through 10 {
+    
+     .p-#{$i} {
+             padding: #{$i} + 'em';
+          }
+    
+     }
+     @for $i from 0 through 10 {
+    
+     .p-0#{$i} {
+          $newV: calc($i / 10);
+             padding: #{$newV} + 'em';
+          }
+    
+     }
+
+.m-auto {
+margin: 0 auto ;
+
+}
+
+.center {
+     text-align: center !important;
+     justify-self: center !important;
+     align-self: center !important;
+   
+     &-image {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 50%;
+     }
+     &-items {
+          display: flex;
+          align-items: center;
+          justify-items: center !important;
+          // background-color: black;
+     }
+     &-content {
+          display: flex;
+          justify-content: center;
+     }
+}
+
+
+.align-center {
+     display: flex;
+     align-items: center;
+}
+.image-fit {
+overflow: hidden;
+     width: 100%;
+     img {
+          object-position: 0 -5em;
+     }
+}

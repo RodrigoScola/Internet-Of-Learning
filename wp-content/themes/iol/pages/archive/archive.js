@@ -1,0 +1,2 @@
+wp.blocks.registerBlockType('iolblock/archive', {title: 'archive Component',edit: () => {return wp.element.createElement('div',{className:'our-placeholder-block',},'archive Component render')},save: () => {return null},})            
+               

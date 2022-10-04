@@ -1,0 +1,47 @@
+.tag {
+  display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+height: 32px;
+order: 0;
+flex-grow: 0;
+     &-icon {
+    
+  display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 4px 8px;
+
+height: 32px;
+
+
+border-radius: 8px 0px 0px 8px;
+
+
+flex: none;
+order: 0;
+flex-grow: 0;
+     }
+     &-text {
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 4px 8px;
+
+height: 32px;
+
+/* D8D8D8 */
+
+background: #D8D8D8;
+border-radius: 0px 8px 8px 0px;
+
+flex: none;
+order: 1;
+flex-grow: 0;
+     }
+}
+.tag  .tag-text:first-child {
+border-radius: 8px 8px 8px 8px;
+
+}

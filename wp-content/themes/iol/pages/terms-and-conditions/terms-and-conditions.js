@@ -1,0 +1,2 @@
+wp.blocks.registerBlockType('iolblock/terms-and-conditions', {title: 'terms-and-conditions Component',edit: () => {return wp.element.createElement('div',{className:'our-placeholder-block',},'terms-and-conditions Component render')},save: () => {return null},})            
+               

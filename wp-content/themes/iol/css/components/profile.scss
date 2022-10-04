@@ -1,0 +1,24 @@
+.profile {
+     &-card {
+          display: grid;
+          grid-template-columns: 15% 80%;
+      
+     }
+     &-description {
+         padding: 0% !important;
+         margin: 0% !important;
+     }
+     &-image {
+          justify-self: center;
+         width:80px !important;
+  height:80px !important;
+  object-fit:cover !important;
+  border-radius:50% !important;
+           &-sm {
+               width: 40px;
+           }
+          &-xsm {
+               width: 25px;
+          }
+     }
+}

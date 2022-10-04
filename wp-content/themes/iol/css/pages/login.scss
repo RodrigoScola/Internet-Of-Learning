@@ -1,0 +1,16 @@
+#loginform {
+     border: none;
+
+     #wp-submit {
+          background-color: $mainYellow;
+          color: black;
+          font-weight: bold;
+     }
+}
+#page-login , #page-register {
+     * {
+          color: black;
+     }
+
+     max-width: 700px;
+}

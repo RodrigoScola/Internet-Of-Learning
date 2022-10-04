@@ -1,0 +1,2 @@
+wp.blocks.registerBlockType('iolblock/sign-up', {title: 'sign-up Component',edit: () => {return wp.element.createElement('div',{className:'our-placeholder-block',},'sign-up Component render')},save: () => {return null},})            
+               

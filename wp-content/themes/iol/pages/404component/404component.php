@@ -1,0 +1,1 @@
+<div class='404component'></div>

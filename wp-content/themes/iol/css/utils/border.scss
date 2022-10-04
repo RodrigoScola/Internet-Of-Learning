@@ -1,0 +1,62 @@
+//            border-width: 1px 1px 1px 1px;
+@mixin rounded($topleft, $bottomleft,$topright, $bottomright ) {
+     border-radius: $topleft $bottomleft $topright $bottomright;
+}
+.border {
+border-style: solid !important;
+border-width: 3px;
+width: fit-content;
+     &-sm {
+border-width: 1px;    
+     }
+     &-md  {
+     border-width: 4px;
+
+     }
+     &-lg {
+     border-width: 4px;
+     }
+     &-circle {
+        @include rounded(50%,50% ,50% ,50% );
+          background-color: unset;
+     }
+}
+@each $key, $value in $colors {
+     .border-#{"" + $key} {
+     border-color: $value !important;
+     }
+
+}
+
+
+// @mixin roundElement($topleft, $bottomleft,$topright, $bottomright ) {
+//      @if $direction == right {
+//            border-top-left-radius: 0 ;
+//                border-bottom-left-radius: 0;
+//                border-top-right-radius: $amount;
+//                border-bottom-right-radius: $amount;
+//      }
+//      @else if $direction == left {
+//            border-top-left-radius: $amount ;
+//                border-bottom-left-radius: $amount;
+//                border-top-right-radius: 0;
+//                border-bottom-right-radius: 0;
+//      }
+//      @else if $direction == up {
+//            border-top-left-radius: $amount ;
+//                border-bottom-left-radius: 0;
+//                border-top-right-radius: $amount;
+//                border-bottom-right-radius: 0;
+//      } @else if $direction == down  {
+//            border-top-left-radius: 0 ;
+//                border-bottom-left-radius: $amount;
+//                border-top-right-radius: 0;
+//                border-bottom-right-radius: $amount;
+//      }
+//      @else {
+//            border-top-left-radius: $amount ;
+//                border-bottom-left-radius: $amount;
+//                border-top-right-radius: $amount;
+//                border-bottom-right-radius: $amount;
+//      }
+// }

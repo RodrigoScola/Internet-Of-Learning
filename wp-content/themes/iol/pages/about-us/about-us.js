@@ -1,0 +1,2 @@
+wp.blocks.registerBlockType('iolblock/about-us', {title: 'about-us Component',edit: () => {return wp.element.createElement('div',{className:'our-placeholder-block',},'about-us Component render')},save: () => {return null},})            
+               

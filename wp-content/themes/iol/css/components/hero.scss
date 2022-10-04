@@ -1,0 +1,40 @@
+.hero {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     
+     &-image {
+          width: 80%;
+          // background-color: bisque;
+          // position: relative;
+          left: 10%;
+          top: -10%;
+        
+     }
+}
+#list_course_button {
+     justify-self: left !important;
+}
+
+@media only screen and  (max-width: 1024px) {
+     .hero {
+       grid-template-columns: 1fr;    
+       &-image {
+           display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 90%;
+       }
+       #list_course_button {
+          display: block;
+          width: 100%;
+          display: flex;
+        *{
+          justify-self: center;
+            margin: 0 auto !important;
+        }
+
+}
+     }
+}
+
+

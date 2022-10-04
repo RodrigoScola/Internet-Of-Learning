@@ -1,0 +1,2 @@
+wp.blocks.registerBlockType('iolblock/categorys', {title: 'category Component',edit: () => {return wp.element.createElement('div',{className:'our-placeholder-block',},'category Component render')},save: () => {return null},})            
+               

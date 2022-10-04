@@ -1,0 +1,29 @@
+.courses {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr !important;
+	.flex button:last-of-type {
+		background: #6252b0;
+	}
+}
+
+.defaultBanner {
+	width: 70vw;
+}
+
+@media (max-width: 1000px) and (min-width: 600px) {
+  .courses {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+@media only screen and (max-width: 900px) and (min-width: 600px) {
+     .courses {
+          grid-template-columns: 1fr 1fr !important;
+          padding: 0 1em;
+     }
+}
+@media only screen and (max-width: 900px) {
+     .courses {
+          grid-template-columns: 1fr !important;
+          padding: 0 1em;
+     }
+}

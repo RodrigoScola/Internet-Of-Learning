@@ -1,0 +1,2 @@
+wp.blocks.registerBlockType('iolblock/toast', {title: 'toast Component',edit: () => {return wp.element.createElement('div',{className:'our-placeholder-block',},'toast Component render')},save: () => {return null},})            
+          

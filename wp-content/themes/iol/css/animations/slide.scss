@@ -1,0 +1,67 @@
+@mixin slideAnim($dirX, $amountX, $dirY,$amountY, $translateX, $translateY) {
+		position: relative;
+		overflow: hidden;
+		&-element {
+			right: 50%;
+			top: 50%;
+			transform: translate(50%, -50%);
+			position: relative;
+			transition: all 0.3s ease-out;
+		}
+}
+.slide {
+	&-in {
+		width: 130px;
+		transition: all 0.75s ease;
+		&:active {
+			width: 300px;
+		}
+	}
+	&-out {
+		transition: all 0.75s ease;
+		width: 300px;
+		&:active {
+			width: 130px;
+		}
+	}
+	&-down {
+		position: relative;
+		overflow: hidden;
+		&-element {
+			* {
+				margin: 0;
+			}
+			top: 0;
+			position: relative;
+			transition: all 0.3s ease-out;
+			height: 100%;
+		}
+	}
+	&-up {
+		@include slideAnim(left,50% ,top ,50% ,-50% ,-50% );
+	}
+	// left 50 top 50 -50 -50
+	&-left {
+		@include slideAnim(right,50% ,top ,50% ,50% ,50% );
+	}
+	// left 50%   top 50  - 50  -50 
+	&-right {
+		@include slideAnim(right,50% , top ,50% , 50% , -50% );
+	}
+}
+
+.slide-up:hover > .slide-up-element {
+	bottom: 100%;
+	top: -50%;
+}
+.slide-left:hover > .slide-left-element {
+	right: 50%;
+	
+}
+.slide-right:hover > .slide-right-element {
+	right: -100%;
+	
+}
+.slide-down:hover > .slide-down-element {
+	top: 100%;
+}

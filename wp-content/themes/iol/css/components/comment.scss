@@ -1,0 +1,46 @@
+.comment {
+      display: grid;
+     margin-top: 1em;
+     border-bottom: 2px solid rgba(0,0,0,0.10);
+
+     grid-template-areas: "image username none"
+                         "image review date"
+                         "content content content";
+     grid-template-columns: 50px 1fr auto;
+     column-gap: 10px;
+     row-gap: 10px;
+     grid-template-rows: 20px 10px auto;
+     &-image {
+          grid-area: image;
+          border-radius: 50%;
+          align-self: center;
+     }
+     &-none {
+          grid-area: none;
+     }
+     &-username {
+          align-self: flex-end ;
+          line-height: 0;
+          grid-area: username;
+     }
+     &-content {
+          grid-area: content;
+     }
+     &-date {
+          padding: 0 !important;
+          margin: 0 !important;
+          color: $gray;
+          grid-area: date;
+          align-self: baseline;
+          justify-self: right;
+     }
+     &-review {
+      
+      
+          grid-area: review;
+     }
+    
+}
+.comment:last-of-type {
+     border-bottom:none ;
+}

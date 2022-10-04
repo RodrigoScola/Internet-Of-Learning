@@ -1,0 +1,39 @@
+@mixin fadeAnimation($name, $opacityStart, $opacityEnd, $ease: ease-in) {
+	animation: $ease 0.5s #{$name};
+	@keyframes #{$name} {
+		0% {
+			opacity: $opacityStart;
+		}
+		100% {
+			opacity: $opacityEnd;
+		}
+	}
+}
+.error {
+	transition: 0.5s 0.2s ease;
+	&-active {
+		background-color: $red !important;
+		color: $white !important;
+		transition: 100ms;
+	}
+}
+.error:active {
+	background-color: $red !important;
+	color: $white !important;
+     border-color: $red;
+	transition: 100ms;
+}
+.fade {
+	&-in {
+		@include fadeAnimation("animfade-in", 0, 1);
+		&_click:focus {
+			@include fadeAnimation("animfade-in", 0, 1, ease-out);
+		}
+	}
+	&-out {
+		@include fadeAnimation("animfade-out", 1, 0);
+		&_click:focus {
+			@include fadeAnimation("animfade-out", 1, 0, ease-in);
+		}
+	}
+}

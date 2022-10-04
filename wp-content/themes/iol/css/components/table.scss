@@ -1,0 +1,21 @@
+table {
+     width: 100%;
+     tr {
+      
+          th {
+               padding: inherit;
+               text-align: left;
+               font-family: inherit;
+               font-size: inherit;
+               font-style: inherit;
+               font-weight: inherit;
+          }
+          td {
+               margin: 3em 0;
+               padding: 0.4em 0;
+          }
+     }
+     tr:nth-child(even) {
+          background-color: $grey;
+     }
+}

@@ -1,0 +1,35 @@
+
+@for $j from 0 to 6 {
+
+.stars-#{$j} {
+     display: inline-block;
+     min-width: 100px;
+
+
+          @for $i from 0 to 6 {
+               .star-#{$i} {
+          position: relative;
+          top: -2px;
+                   @if ($i <= $j) {
+                    color: gold;
+                   } @else {
+                    color: lightblue;
+                   }
+               }
+          }
+    
+       
+     }
+}
+.reviewStar {
+     * {
+
+     width: 50px !important;
+     height: auto;
+     &:hover {
+          color: yellow;
+          transition: 0.1s;
+     }
+    
+     }
+}

@@ -1,0 +1,33 @@
+{
+	"name": "fictional-university-theme",
+	"version": "1.0.0",
+	"main": "./src/index.js",
+	"scripts": {
+		"start": "wp-scripts  start src/index.js  blocks/genericbutton/genericbutton.js blocks/genericinput/genericinput.js blocks/genericheading/genericheading.js blocks/generictext/generictext.js blocks/generictext/frontend.js src/pages/new-course.js src/pages/course-settings.js  src/pages/sign-up.js src/pages/inputs.js src/pages/course.js src/pages/test.js ",
+		"dev": "wp-scripts start",
+		"build": "wp-scripts build src/index.js  blocks/genericbutton/genericbutton.js blocks/genericinput/genericinput.js blocks/generictext/generictext.js blocks/generictext/frontend.js src/pages/new-course.js src/pages/course-settings.js  src/pages/sign-up.js src/pages/inputs.js src/pages/test.js ",
+		"devFast": "wp-scripts start",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@chakra-ui/react": "^2.3.1",
+		"@emotion/react": "^11.10.4",
+		"@emotion/styled": "^11.10.4",
+		"@glidejs/glide": "^3.4.1",
+		"@wordpress/api-fetch": "^6.12.0",
+		"@wordpress/icons": "^9.2.0",
+		"@wordpress/scripts": "*",
+		"animate.css": "^4.1.1",
+		"axios": "^0.21.1",
+		"framer-motion": "^7.2.1",
+		"normalize.css": "^8.0.1",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-hot-toast": "^2.4.0",
+		"sass": "^1.53.0"
+	},
+	"description": ""
+}

@@ -1,0 +1,75 @@
+.search-tab  {
+  &-full {
+    width: 100%;
+      margin-left: 0 !important;
+    div {
+      padding: 0 !important;
+      width: 80%;
+    }
+  }
+     display: flex;
+     justify-content: center;
+     div {
+    background-color: white;
+          display: flex;
+         max-height: 60px;
+          //  width: 45%;
+           padding: 0.13em;
+           .searchicon , svg {
+               margin: auto 1em;
+           } 
+         border-top-left-radius:16px ;
+         border-bottom-left-radius:16px ;
+
+
+     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+          input {
+            
+            width: 100%;
+            // height: 19px;
+            padding: 0;
+            padding-left: 0.4em;
+            &:focus {
+              outline: none;
+              border: none;
+            }
+            &:active {
+              border: none;
+            }
+          }
+          #search_input {
+           border: none;
+           outline: none;
+          
+          }
+     }
+    #header-search-button {
+      &::after {
+        margin: 0 0.4em ;
+        content: 'Start Learning'; // needs to have that space or add padding 
+      }
+      min-width: 60px ;
+      color: black !important;
+
+      height: 100%;
+    //  border: 1px solid rgba(0, 0, 0, 0.1);
+border-radius: 0px 16px 16px 0px;
+     svg {
+   position: relative;
+   top: 0px;
+  //  left: -3px;
+     }
+    }
+   
+    svg {
+     color: #FEEB3C;
+    }
+    
+}
+.svgfit {
+  position: relative;
+   top: -1px;
+   left: 9px;
+}
+
+

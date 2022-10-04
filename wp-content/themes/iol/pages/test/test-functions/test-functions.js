@@ -1,0 +1,2 @@
+wp.blocks.registerBlockType('iolblock/test-functions', {title: 'test-functions Component',edit: () => {return wp.element.createElement('div',{className:'our-placeholder-block',},'test-functions Component render')},save: () => {return null},})            
+               

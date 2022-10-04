@@ -1,0 +1,78 @@
+$elements: dashboard,account-settings,course-settings,my-courses,logout;
+
+.nav-dashboard {
+     display: grid;
+     width: 75%;
+     margin: 0 auto;
+     height: fit-content;
+  grid-template-areas: 'dashboard'
+              'account-settings'
+              'my-courses'
+              'logout';
+     gap: 8px;
+   //elements
+  & > * {
+    display: flex;
+    flex-direction: row ;
+     padding: 8px 16px;
+    margin: 0 auto;
+     width: 100%;
+     text-align: left !important;
+   }
+     padding: 3em 0;
+#dashboard {
+  grid-area: dashboard;
+  &::after {
+    content: "Dashboard";
+  }
+}
+#account-settings {
+  grid-area: account-settings;
+  &::after {
+    content: "Settings";
+  }
+}
+#course-settings {
+  
+  &::after {
+    content: "Course Settings";
+  }
+}
+#my-courses {
+  grid-area: my-courses;
+  &::after {
+    content: "Courses";
+  }
+}
+#logout {
+  grid-area: logout;
+  &::after {
+    content: "Log Out";
+  }
+}
+}
+
+@media only screen and (max-width: 600px) {
+  .nav-dashboard {
+      grid-template-areas: 'dashboard account-settings my-courses logout';
+      width: 90%;
+    & > * {
+      word-break: normal;
+      height: min-content;
+      justify-items: center;
+      justify-content: center;
+    }
+ 
+  }
+}
+@media only screen and (max-width: 500px) {
+  .nav-dashboard {
+     @each $item in $elements {
+    ##{$item} {
+      &::after {
+        content: "";
+      }
+    }
+  }
+  }
+}

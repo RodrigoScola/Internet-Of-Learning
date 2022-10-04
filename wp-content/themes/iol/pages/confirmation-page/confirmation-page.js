@@ -1,0 +1,2 @@
+wp.blocks.registerBlockType('iolblock/confirmation-page', {title: 'confirmation-page Component',edit: () => {return wp.element.createElement('div',{className:'our-placeholder-block',},'confirmation-page Component render')},save: () => {return null},})            
+               

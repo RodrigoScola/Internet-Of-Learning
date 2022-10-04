@@ -1,0 +1,2 @@
+wp.blocks.registerBlockType('iolblock/demo-course', {title: 'demo-course Component',edit: () => {return wp.element.createElement('div',{className:'our-placeholder-block',},'demo-course Component render')},save: () => {return null},})            
+               

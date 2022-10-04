@@ -1,0 +1,2 @@
+wp.blocks.registerBlockType('iolblock/for-educators', {title: 'for-educators Component',edit: () => {return wp.element.createElement('div',{className:'our-placeholder-block',},'for-educators Component render')},save: () => {return null},})            
+               

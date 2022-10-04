@@ -1,0 +1,2 @@
+wp.blocks.registerBlockType('iolblock/post', {title: 'post Component',edit: () => {return wp.element.createElement('div',{className:'our-placeholder-block',},'post Component render')},save: () => {return null},})            
+               

@@ -1,0 +1,2 @@
+wp.blocks.registerBlockType('iolblock/demo-review', {title: 'demo-review Component',edit: () => {return wp.element.createElement('div',{className:'our-placeholder-block',},'demo-review Component render')},save: () => {return null},})            
+               

@@ -1,0 +1,2 @@
+wp.blocks.registerBlockType('iolblock/dsboard', {title: 'dsboard Component',edit: () => {return wp.element.createElement('div',{className:'our-placeholder-block',},'dsboard Component render')},save: () => {return null},})            
+               

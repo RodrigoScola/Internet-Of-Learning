@@ -1,0 +1,83 @@
+$hoverColor: currentColor;
+.tp {
+	position: relative;
+	max-width: fit-content;
+	display: inline-block;
+}
+@mixin tpArrow {
+	content: " ";
+	position: absolute;
+	top: 50%;
+	/* To the left of the tooltip */
+	margin-top: -5px;
+	border-width: 5px;
+	border-style: solid;
+     color: currentColor;
+}
+@mixin tpProps() {
+	visibility: hidden;
+	width: max-content;
+
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px;
+	position: absolute;
+	z-index: 1;
+}
+
+.tp .tp-text {
+	&_top {
+		@include tpProps();
+		width: 120px;
+		bottom: 100%;
+		left: 50%;
+		margin-left: -60px;
+		margin-bottom: 0.3em;
+	}
+	&_left {
+		@include tpProps();
+		top: 50%;
+		right: 110%;
+	}
+	&_right {
+		@include tpProps();
+		top: 25%;
+		left: 105%;
+	}
+	&_bottom {
+          @include tpProps();
+		width: 120px;
+		top: 100%;
+		left: 50%;
+		margin-left: -60px;
+
+	}
+}
+
+.tp:hover {
+	.tp-text_right,
+	.tp-text_left,
+	.tp-text_top,
+	.tp-text_bottom {
+		visibility: visible;
+	}
+}
+
+.tp {
+	.tp-text_left,
+	.tp-text_right,
+	.tp-text_top,
+	.tp-text_bottom {
+		opacity: 0;
+		transition: opacity 0.3s;
+	}
+}
+
+.tp:hover {
+	.tp-text_left,
+	.tp-text_right,
+	.tp-text_top,
+	.tp-text_bottom {
+		opacity: 1;
+	}
+}

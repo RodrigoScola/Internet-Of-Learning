@@ -1,0 +1,51 @@
+@mixin titleSize($size, $lineHeight, $spacing : 0.02em) {
+     font-size:$size;
+     line-height: $lineHeight;
+     letter-spacing: $spacing;
+     cursor: default !important;
+     font-style: normal;
+}
+
+.text {
+     font-family: 'Roboto';
+     &-gnt {
+          @include titleSize(80px, 85px,)
+     }
+     &-lg {
+        @include titleSize(46px,50px);
+     }
+     &-md {
+         @include titleSize(33px,38px,0.02em);
+     }
+     &-sm {
+          @include titleSize(20px,33px);
+     }
+     &-xsm {
+          @include titleSize(16px, 20px)
+     }
+     &-title {
+     font-family: 'Roboto Slab';
+     }
+     &-center {
+          text-align: center ;
+     }    
+     &-left {
+          text-align: left;
+     }
+     &-right {
+          text-align: right;
+     }
+     &-justify {
+          text-align: justify;
+     }
+}
+
+
+
+
+.title {
+     text-align: left;
+     @include titleSize(33px,38px ,0.02em );
+     font-family: 'Roboto Slab';
+     font-weight: bold;
+}

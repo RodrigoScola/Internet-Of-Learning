@@ -1,0 +1,60 @@
+.inlineflex {
+     flex-wrap: wrap;
+     display: inline-flex;
+     align-self: flex-start;
+     align-items: flex-start;
+     &-around {
+          justify-content: space-around;
+     }
+     &-between {
+          justify-content: space-between;
+     }
+     &-evenly {
+          justify-content: space-evenly ;
+     }
+     &-center {
+          justify-content: center !important;
+     }
+}
+
+
+.flex {
+     display: flex; 
+     height: min-content;
+     flex-wrap: wrap;
+     // justify-content: center;
+     &-nowrap {
+          flex-wrap: nowrap;
+     }
+     &-col {
+          flex-direction: column;
+     }
+     &-row {
+          flex-direction: row;
+     }
+     &-between {
+          justify-content: space-between !important; 
+
+     }
+     &-evenly {
+          justify-content: space-evenly !important;
+     }
+     &-left {
+     justify-content:left;
+
+     }
+     &-right {
+          justify-content: right !important;
+     }
+     &-center {
+          justify-items: center !important;
+          justify-content: center;
+     }
+    &-top {
+     align-items: flex-start;
+    }
+}
+.inline {
+      width: unset !important ;
+          vertical-align: middle !important ;
+}

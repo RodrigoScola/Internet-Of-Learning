@@ -1,0 +1,2 @@
+wp.blocks.registerBlockType('iolblock/component404', {title: 'component404 Component',edit: () => {return wp.element.createElement('div',{className:'our-placeholder-block',},'component404 Component render')},save: () => {return null},})            
+               

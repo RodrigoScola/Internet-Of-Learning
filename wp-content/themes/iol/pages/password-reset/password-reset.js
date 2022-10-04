@@ -1,0 +1,2 @@
+wp.blocks.registerBlockType('iolblock/password-reset', {title: 'password-reset Component',edit: () => {return wp.element.createElement('div',{className:'our-placeholder-block',},'password-reset Component render')},save: () => {return null},})            
+               

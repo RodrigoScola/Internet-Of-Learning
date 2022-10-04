@@ -1,0 +1,2 @@
+wp.blocks.registerBlockType('iolblock/users', {title: 'users Component',edit: () => {return wp.element.createElement('div',{className:'our-placeholder-block',},'users Component render')},save: () => {return null},})            
+               

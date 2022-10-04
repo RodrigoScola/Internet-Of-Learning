@@ -1,0 +1,2 @@
+wp.blocks.registerBlockType('iolblock/course-reviews', {title: 'course-reviews Component',edit: () => {return wp.element.createElement('div',{className:'our-placeholder-block',},'course-reviews Component render')},save: () => {return null},})            
+               

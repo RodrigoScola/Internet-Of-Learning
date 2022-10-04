@@ -1,0 +1,2 @@
+wp.blocks.registerBlockType('iolblock/account-settings', {title: 'account-settings Component',edit: () => {return wp.element.createElement('div',{className:'our-placeholder-block',},'account-settings Component render')},save: () => {return null},})            
+               
