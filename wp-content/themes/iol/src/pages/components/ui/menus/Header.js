@@ -27,7 +27,6 @@ export const Header = ({ innerHTML }) => {
 					__html: innerHTML,
 				}}
 			></div>
-			<GetIcon />
 		</>
 	)
 }

@@ -44,19 +44,19 @@
                ));
 
 
-          
+
 
                foreach ($categories as $category) {
                     $coursesCount = (int)get_term_meta($category->term_id, 'courses_count', true);
                     // var_dump($coursesCount);
                     if ($coursesCount > 0) {
-                         echo '<button class="btn zoom-in_hover m-05 btn-teal white btn-round"><a href="' . get_category_link($category->term_id) . '">' . $category->name . '</a></button>';
-                }
+                         echo '<button class="btn zoom-in_hover m-05 btn-teal white btn-round"><a href="' . esc_url(site_url('/' . $category->slug)) . '">' . $category->name . '</a></button>';
+                    }
                }
                wp_reset_postdata() ?>
 
                <a href="<?php echo esc_url(site_url('/courses')) ?>" class='btn m-05 btn-blue white btn-round'>Show all Courses</a>
-             
+
 
           </section>
      </article>

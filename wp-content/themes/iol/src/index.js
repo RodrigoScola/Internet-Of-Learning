@@ -10,15 +10,10 @@ import { Nav } from "./pages/components/ui/menus/Nav"
 import { Header } from "./pages/components/ui/menus/Header"
 
 const animations = new AnimHandler()
-const getIcon = async (iconname) => {
-	const str = "../../../icons/ArrowUp.svg"
-	const icon = await import("../../../icons/ArrowUp.svg")
-	console.log(icon)
-	return icon
-}
+
 window.addEventListener("load", () => {
 	const headernav = document.querySelector("#header_mobile")
-	ReactDOM.render(<Header innerHTML={headernav.innerHTML} />, headernav)
+	// ReactDOM.render(<Header innerHTML={headernav.innerHTML} />, headernav)
 
 	// if (!ioldata.is_mobile) {
 	if (ioldata.slug == "inputs") {

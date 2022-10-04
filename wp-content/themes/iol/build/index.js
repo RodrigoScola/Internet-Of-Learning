@@ -67,19 +67,9 @@ const mode = new _changeMode__WEBPACK_IMPORTED_MODULE_2__.ChangeMode();
 
 
 const animations = new _pages_animations_buttonSubmit__WEBPACK_IMPORTED_MODULE_6__.AnimHandler();
-
-const getIcon = async iconname => {
-  const str = "../../../icons/ArrowUp.svg";
-  const icon = await Promise.resolve().then(function webpackMissingModule() { var e = new Error("Cannot find module '../../../icons/ArrowUp.svg'"); e.code = 'MODULE_NOT_FOUND'; throw e; });
-  console.log(icon);
-  return icon;
-};
-
 window.addEventListener("load", () => {
-  const headernav = document.querySelector("#header_mobile");
-  react_dom__WEBPACK_IMPORTED_MODULE_4___default().render((0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_pages_components_ui_menus_Header__WEBPACK_IMPORTED_MODULE_9__.Header, {
-    innerHTML: headernav.innerHTML
-  }), headernav); // if (!ioldata.is_mobile) {
+  const headernav = document.querySelector("#header_mobile"); // ReactDOM.render(<Header innerHTML={headernav.innerHTML} />, headernav)
+  // if (!ioldata.is_mobile) {
 
   if (ioldata.slug == "inputs") {
     const nav = document.querySelector(".navigation-bar");
@@ -572,7 +562,7 @@ const Header = _ref => {
     dangerouslySetInnerHTML: {
       __html: innerHTML
     }
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Icon__WEBPACK_IMPORTED_MODULE_4__.GetIcon, null));
+  }));
 };
 
 /***/ }),
