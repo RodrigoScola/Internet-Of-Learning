@@ -541,7 +541,7 @@ const ImageInput = _ref2 => {
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
       class: "text-title text-xsm bold"
     }, headerText), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      class: "inputIcon clearfix"
+      class: "inputIcon course-image clearfix"
     }, typeof imageLink != "object" ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "flex flex-between"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
@@ -565,9 +565,9 @@ const ImageInput = _ref2 => {
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
       class: "text-title w-100 text-xsm bold"
     }, headerText), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      class: "inputIcon clearfix "
+      class: "inputIcon course-banner clearfix "
     }, typeof imageLink == "string" ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: "w-100 h-20 mv-2 bg-gray image-fit"
+      className: "w-100 h-20 bg-gray image-fit"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
       className: "w-100",
       src: imageLink
@@ -592,9 +592,9 @@ const ImageInput = _ref2 => {
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
       class: "text-title text-xsm bold"
     }, "instructor Image Preview"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      class: "inputIcon clearfix"
+      class: "inputIcon course-image avatar clearfix"
     }, typeof imageLink == "string" ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: "flex flex-between w-50"
+      className: "flex flex-between"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
       className: "profile-image",
       src: imageLink
@@ -678,7 +678,9 @@ const CoursePreview = _ref => {
       setInstructorImg(instructorImage);
     }
   }, [instructorImage]);
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("article", {
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    id: "course"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("article", {
     class: "course"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("article", {
     class: "content"
@@ -748,15 +750,7 @@ const CoursePreview = _ref => {
     class: "gridcol-3 mb-2 gap"
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("article", {
     class: "navigation-bar"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("aside", {
-    class: "container container-sharp   pv-2"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-    class: "text-title text-center bold text-xsm"
-  }, "Did you enjoy the course?"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "flex"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
-    class: "btn btn-blue addReview center white"
-  }, "Write a review"))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("section", {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("section", {
     class: "mt-2 p-1 container container-sharp"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: mainImage
@@ -796,7 +790,7 @@ const CoursePreview = _ref => {
     href: "# "
   }, "title link"))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
     class: "w-100 btn btn-yellow text-center bold mt-1"
-  }, "Go to the course"))))));
+  }, "Go to the course1")))))));
 };
 
 /***/ }),
@@ -2225,7 +2219,7 @@ function RenderComponent() {
     onClick: () => setStep(1),
     class: "btn btn-yellow bold griditem-2 m-4 right"
   }, "SAVE AND LOOK AT THE COURSE PREVIEW") : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
-    disabled: sent == true,
+    //disabled={ sent == true }
     onClick: publishCourse,
     className: `${step == 1 ? 'btn btn-yellow bold griditem-2 m-1 right' : 'invisible'}  `
   }, "Publish Course"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {

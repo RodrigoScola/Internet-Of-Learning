@@ -30,6 +30,7 @@ useEffect(() => {
 
      return (
 		<>
+		<div id="course">
 			<article class="course">
 				<article class="content">
 					<p>
@@ -98,12 +99,7 @@ useEffect(() => {
 					<section class="gridcol-3 mb-2 gap"></section>
 				</article>
 				<article class="navigation-bar">
-					<aside class="container container-sharp   pv-2">
-						<p class="text-title text-center bold text-xsm">Did you enjoy the course?</p>
-						<div className="flex">
-							<button class="btn btn-blue addReview center white">Write a review</button>
-						</div>
-					</aside>
+
 					<section class="mt-2 p-1 container container-sharp">
 						<img src={mainImage} />
 						<div class="inlineflex"></div>
@@ -154,11 +150,12 @@ useEffect(() => {
 							</aside>
 						</section>
 						<div>
-							<button class="w-100 btn btn-yellow text-center bold mt-1">Go to the course</button>
+							<button class="w-100 btn btn-yellow text-center bold mt-1">Go to the course1</button>
 						</div>
 					</section>
 				</article>
 			</article>
+		</div>
 		</>
 	)
 }

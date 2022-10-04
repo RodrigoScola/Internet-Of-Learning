@@ -91,7 +91,7 @@ export const ImageInput = ({
 		return (
 			<label onClick={() => imageRef.click()}>
 				<p class="text-title text-xsm bold">{headerText}</p>
-				<div class="inputIcon clearfix">
+				<div class="inputIcon course-image clearfix">
 					{typeof imageLink != "object" ? (
 						<div className="flex flex-between">
 							<img className="" src={imageLink} />
@@ -128,9 +128,9 @@ export const ImageInput = ({
 		return (
 			<label className="clearfix griditem-1-2  w-100" onClick={() => imageRef.click()}>
 				<p class="text-title w-100 text-xsm bold">{headerText}</p>
-				<div class="inputIcon clearfix ">
+				<div class="inputIcon course-banner clearfix ">
 					{typeof imageLink == "string" ? (
-						<div className="w-100 h-20 mv-2 bg-gray image-fit">
+						<div className="w-100 h-20 bg-gray image-fit">
 							<img className="w-100" src={imageLink} />
 						</div>
 					) : (
@@ -156,9 +156,9 @@ export const ImageInput = ({
 		return (
 			<label className="clearfix w-100" onClick={() => imageRef.click()}>
 				<p class="text-title text-xsm bold">instructor Image Preview</p>
-				<div class="inputIcon clearfix">
+				<div class="inputIcon course-image avatar clearfix">
 					{typeof imageLink == "string" ? (
-						<div className="flex flex-between w-50">
+						<div className="flex flex-between">
 							<img className="profile-image" src={imageLink} />
 						</div>
 					) : (

@@ -185,7 +185,7 @@ function RenderComponent() {
 				) : (
 					<>
 						<button
-							disabled={ sent == true }
+							//disabled={ sent == true }
 							onClick={ publishCourse }
 							className={ `${
 								step == 1

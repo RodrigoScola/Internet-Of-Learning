@@ -388,7 +388,7 @@ const ImageInput = _ref2 => {
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
       class: "text-title text-xsm bold"
     }, headerText), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      class: "inputIcon clearfix"
+      class: "inputIcon course-image clearfix"
     }, typeof imageLink != "object" ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "flex flex-between"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
@@ -412,9 +412,9 @@ const ImageInput = _ref2 => {
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
       class: "text-title w-100 text-xsm bold"
     }, headerText), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      class: "inputIcon clearfix "
+      class: "inputIcon course-banner clearfix "
     }, typeof imageLink == "string" ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: "w-100 h-20 mv-2 bg-gray image-fit"
+      className: "w-100 h-20 bg-gray image-fit"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
       className: "w-100",
       src: imageLink
@@ -439,9 +439,9 @@ const ImageInput = _ref2 => {
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
       class: "text-title text-xsm bold"
     }, "instructor Image Preview"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      class: "inputIcon clearfix"
+      class: "inputIcon course-image avatar clearfix"
     }, typeof imageLink == "string" ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: "flex flex-between w-50"
+      className: "flex flex-between"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
       className: "profile-image",
       src: imageLink
