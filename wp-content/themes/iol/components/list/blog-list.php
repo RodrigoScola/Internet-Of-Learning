@@ -1,11 +1,11 @@
 <div class='course-card mv-1 '>
      <img class='course-card-image ' src='<?php echo get_the_post_thumbnail_url() ?>' />
      <div class="body">
-          <h3 class='clearfix text-title text-xsm bold left'>
+          <a href="<?php echo esc_url(get_the_permalink()) ?>" class='clearfix text-title text-xsm bold left'>
                <?= sanitize_text_field(get_the_title()) ?>
-          </h3>
+          </a>
 
-          
+
           <p class="p-0 m-0">
                <?= sanitize_text_field(get_the_excerpt()) ?>
           </p>
@@ -15,7 +15,7 @@
           <a href='<?= esc_url(get_the_permalink()) ?>' class='btn btn-yellow black h-min w-100 white p-05'>
                Read more
           </a>
-         
+
      </div>
 
 </div>

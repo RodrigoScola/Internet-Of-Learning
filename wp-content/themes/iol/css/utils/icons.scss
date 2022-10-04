@@ -1,4 +1,18 @@
 $sizes: (sm : 16px, md : 24px, lg: 48px, gnt: 64px);
+
+@import './icondata.scss';
+
+@each $key, $value in $iconData {
+  .icon-#{$key} {
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+
+ -webkit-mask: url($value) no-repeat center;
+  mask: url($value) no-repeat center;
+  }
+}
+
 .icon {
     @each $size, $value in $sizes {
      &-#{$size} {
@@ -9,3 +23,14 @@ $sizes: (sm : 16px, md : 24px, lg: 48px, gnt: 64px);
      }
     }
 }
+img.icon {
+    @each $size, $value in $sizes {
+     &-#{$size} {
+    
+            width: $value;
+          height: $value;
+        
+     }
+    }
+}
+

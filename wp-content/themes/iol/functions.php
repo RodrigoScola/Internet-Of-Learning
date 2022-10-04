@@ -111,13 +111,19 @@ function iolFile()
      wp_enqueue_script('main-js', get_theme_file_uri('/build/index.js'), array('jquery'), '1.0', true);
      wp_enqueue_style('google-font', 'https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i');
      wp_enqueue_style('animations_css', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+     wp_enqueue_script('bootstrap-js', '	https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js');
+     wp_enqueue_style('bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css');
      wp_enqueue_style('custom-font', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
      wp_enqueue_style('main', get_theme_file_uri('build/style-index.css'));
      wp_enqueue_style('main-extra', get_theme_file_uri('build/index.css'));
+     global $post;
      wp_localize_script('main-js', 'ioldata', array(
           'root_url' => get_site_url(),
           'nonce' => wp_create_nonce('wp_rest'),
           'post_id' => get_the_ID(),
+          'page' => [
+               'post_type' => $post->post_type
+          ],
           'slug' => str_replace(' ', '-', get_the_title()),
           'user_id' => get_current_user_id(),
           'is_mobile' => wp_is_mobile(),

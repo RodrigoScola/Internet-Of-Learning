@@ -12,8 +12,14 @@ import { Header } from "./pages/components/ui/menus/Header"
 const animations = new AnimHandler()
 
 window.addEventListener("load", () => {
+	console.log(ioldata)
+
 	const headernav = document.querySelector("#header_mobile")
-	// ReactDOM.render(<Header innerHTML={headernav.innerHTML} />, headernav)
+
+	ReactDOM.render(
+		<Header categories={headernav.getAttribute("data-categories")} innerHTML={headernav.innerHTML} />,
+		headernav
+	)
 
 	// if (!ioldata.is_mobile) {
 	if (ioldata.slug == "inputs") {
@@ -29,46 +35,4 @@ window.addEventListener("load", () => {
 	})
 
 	// const reviewButton
-})
-
-$("input[name=payment]").on("change", () => {
-	const value = $("input[name=payment]:checked").val()
-
-	const cards = {
-		creditCard: `
-     <div class=''>
-           <label class='text-xsm text-title m-0 bold'>
-                    *Card Name
-                    <input name='card_name' class='input mb-1' required />
-          </label>
-     <div class=''>
-           <label class='text-xsm text-title m-0 bold'>
-                    *Card Number
-                    <input type="number" name='card_number' maxlegnth='10' class='input mb-1' required />
-          </label>
-     </div>
-     <div class='gridcol-2 gap-2'>
-            <label class='text-xsm text-title m-0 bold'>
-                    *Expiration Date
-                    <input name='card_date' type="date" class='input mb-1' required />
-          </label>
-          <label class='text-xsm text-title m-0 bold'>
-                    *CVV
-                    <input name='cvv' type="number" maxlength='3' class='input mb-1' required />
-          </label>
-     </div>
-     </div>
-     `,
-		stripe: `
-     
-          <div>
-          <label class='text-xsm text-title m-0 bold'>
-                    *Card Number 
-                    <input name='card_number_stripe' type="number" class='input mb-1' required />
-          </label>
-          </div>
-     `,
-	}
-
-	$("#payment-options").html(cards[value])
 })

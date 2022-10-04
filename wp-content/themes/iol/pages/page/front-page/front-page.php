@@ -1,5 +1,7 @@
 <main class="main-content">
      <div class="hero">
+
+
           <div class='hero-left'>
                <h1 class='text-title bold text-lg'>
 
@@ -23,7 +25,7 @@
      <form method="GET" action="<?php echo esc_url(site_url('/search')) ?>" class="search-tab align center-items">
           <div class="border border-gray" style='width: 70%'>
                <i class="bi yellow bi-search ph-03"></i>
-               <input class='input' type="search" placeholder="What do you want to learn?" />
+               <input class='input' name='term' type="search" placeholder="What do you want to learn?" />
           </div>
           <button class='btn btn-yellow btn-round_right h-max btn-sm ' type="submit">
                <i class="bi bi-search"></i>
@@ -47,6 +49,7 @@
 
 
                foreach ($categories as $category) {
+                    // var_dump($category);
                     $coursesCount = (int)get_term_meta($category->term_id, 'courses_count', true);
                     // var_dump($coursesCount);
                     if ($coursesCount > 0) {

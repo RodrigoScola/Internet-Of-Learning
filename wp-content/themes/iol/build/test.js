@@ -273,17 +273,17 @@ __webpack_require__.r(__webpack_exports__);
 
 const Tooltip = _ref => {
   let {
-    position = 'right',
-    textColor = 'black',
-    color = 'gray',
+    position = "right",
+    textColor = "black",
+    color = "gray",
     children,
-    text = ''
+    text = ""
   } = _ref;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "tp"
-  }, children, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+  }, text, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: ` tp-text_${position} bg-${color} ${textColor}  zoom-in`
-  }, text));
+  }, children));
 };
 
 /***/ }),

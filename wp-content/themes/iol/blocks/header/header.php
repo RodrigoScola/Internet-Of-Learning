@@ -13,7 +13,5 @@
 
 
 
-     <div class="iconBANNER">
-          howeh
-     </div>
+
 </header>

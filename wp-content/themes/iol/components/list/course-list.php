@@ -1,9 +1,9 @@
 <div class='course-card mv-1 zoom-in_hover'>
      <img class='course-card-image ' src='<?php echo get_the_post_thumbnail_url() ?>' />
      <div class="body">
-          <h1 class='clearfix text-title text-xsm bold left'>
+          <a href="<?php esc_url(get_the_permalink()) ?>" class='clearfix text-title text-xsm bold left'>
                <?= sanitize_text_field(get_the_title()) ?>
-          </h1>
+          </a>
 
           <?php echo renderReviewCount(get_field('average'), get_field('total_reviews')) ?>
           <div class='inlineflex mt-1'>
@@ -14,7 +14,7 @@
                     <?= get_field('time_investment') ?> hours
                </div>
                <div class="ph-1 mb-02">
-                   <?php echo get_difficulty_level() ?>
+                    <?php echo get_difficulty_level() ?>
                </div>
                <div>
                     <span class="dashicons dashicons-admin-site-alt3"></span>

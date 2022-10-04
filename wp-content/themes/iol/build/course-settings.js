@@ -594,17 +594,17 @@ __webpack_require__.r(__webpack_exports__);
 
 const Tooltip = _ref => {
   let {
-    position = 'right',
-    textColor = 'black',
-    color = 'gray',
+    position = "right",
+    textColor = "black",
+    color = "gray",
     children,
-    text = ''
+    text = ""
   } = _ref;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "tp"
-  }, children, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+  }, text, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: ` tp-text_${position} bg-${color} ${textColor}  zoom-in`
-  }, text));
+  }, children));
 };
 
 /***/ }),
@@ -772,6 +772,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "fetchData": () => (/* binding */ fetchData),
 /* harmony export */   "form": () => (/* binding */ form),
 /* harmony export */   "formatter": () => (/* binding */ formatter),
+/* harmony export */   "removeTags": () => (/* binding */ removeTags),
 /* harmony export */   "remove_invisible_tag": () => (/* binding */ remove_invisible_tag),
 /* harmony export */   "stringToHtml": () => (/* binding */ stringToHtml)
 /* harmony export */ });
@@ -946,6 +947,9 @@ const fetchData = {
     const data = await fetch(siteUrl + "wp-json/wp/v2/media/" + id);
     return data;
   }
+};
+const removeTags = str => {
+  return str.replace(/(<([^>]+)>)/gi, "");
 };
 
 /***/ }),

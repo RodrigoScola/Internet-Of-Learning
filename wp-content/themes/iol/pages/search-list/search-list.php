@@ -5,7 +5,7 @@ $for = new Formatting();
 $f = new PageHandler();
 $f->get_page_params();
 
-     $results = searchResults($f->pageParams);
+$results = searchResults($f->pageParams);
 
 
 $release_year = get_query_var('release_year', 0)[0];
@@ -34,15 +34,15 @@ $levelArr = get_query_var('courselevel', []);
 
                foreach ($categories as $category) {
                     $coursesCount = (int)get_term_meta($category->term_id,  'courses_count', true);
-                    
+
                     if ($coursesCount) {
 
                ?>
 
-                    <p><label class="inlineflex ">
-                              <input <?php echo $for->some($catArr, $category->cat_ID) ? "checked" : '' ?> name='categories[]' value='<?php echo $category->cat_ID ?>' class='checkbox mr-05' type="checkbox" /> <?php echo "{$category->name}" ?>
-                         </label>
-                    </p>
+                         <p><label class="inlineflex ">
+                                   <input <?php echo $for->some($catArr, $category->cat_ID) ? "checked" : '' ?> name='categories[]' value='<?php echo $category->cat_ID ?>' class='checkbox mr-05' type="checkbox" /> <?php echo "{$category->name}" ?>
+                              </label>
+                         </p>
 
                <?php
                     }
@@ -104,7 +104,7 @@ $levelArr = get_query_var('courselevel', []);
      </form>
      <div class="searchlist">
           <p class="text-title text-sm bold  mv-05">
-               "<?= sanitize_text_field(get_query_var('term')) ?>" in all courses
+               "<?= esc_attr(strip_tags(get_query_var('term'))) ?>" in all courses
           </p>
           <aside class="flex-row flex mb-1 w-100 flex-between">
                <!-- <p>
