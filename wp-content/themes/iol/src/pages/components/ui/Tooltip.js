@@ -1,4 +1,5 @@
 import React, { Children } from "react"
+import { useDisclosure } from "../../hooks/useDisclosure"
 
 export const Tooltip = ({ position = "right", textColor = "black", color = "gray", children, text = "" }) => {
 	return (

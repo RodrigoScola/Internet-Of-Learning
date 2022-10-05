@@ -1,4 +1,6 @@
 <div class='password-change w-50 main-content  pt-3'>
+     <?php init_posts() ?>
+
      <h1 class="text-center text-title text-lg bold">Change your password</h1>
      <p class="text-sm text-center">In order to <span class="bold">protect your account</span>, make sure your passowrd:</p>
      <ul class="list p-0">
@@ -17,20 +19,20 @@
      </ul>
      <div class="passwordCheck"></div>
      <noscript>
-     <form class="formInput">
-          <label class='text-xsm text-title m-0 bold'>
-               *Old password
-               <input type="password" class='input mb-1' required />
-          </label> <label class='text-xsm text-title m-0 bold'>
-               *new Password
-               <input type="password" class='input mb-1' required />
-          </label>
-          <label class='text-xsm text-title m-0 bold'>
-               *same password
-               <input type="password" class='input mb-1' required />
-          </label>
-          <button class="btn btn-lg btn-yellow bold">Change Password</button>
-     </form>
+          <form class="formInput">
+               <label class='text-xsm text-title m-0 bold'>
+                    *Old password
+                    <input type="password" class='input mb-1' required />
+               </label> <label class='text-xsm text-title m-0 bold'>
+                    *new Password
+                    <input type="password" class='input mb-1' required />
+               </label>
+               <label class='text-xsm text-title m-0 bold'>
+                    *same password
+                    <input type="password" class='input mb-1' required />
+               </label>
+               <button class="btn btn-lg btn-yellow bold">Change Password</button>
+          </form>
      </noscript>
      <div class="divider-lg"></div>
 </div>

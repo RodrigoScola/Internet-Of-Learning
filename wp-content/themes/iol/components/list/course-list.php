@@ -1,7 +1,7 @@
-<div class='course-card mv-1 zoom-in_hover'>
+<div class='course-card mv-1 m-auto zoom-in_hover'>
      <img class='course-card-image ' src='<?php echo get_the_post_thumbnail_url() ?>' />
      <div class="body">
-          <a href="<?php esc_url(get_the_permalink()) ?>" class='clearfix text-title text-xsm bold left'>
+          <a href="<?php esc_url(get_the_permalink()) ?>" class='clearfix mv-1 text-title text-xsm bold left'>
                <?= sanitize_text_field(get_the_title()) ?>
           </a>
 

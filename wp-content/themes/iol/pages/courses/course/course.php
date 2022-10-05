@@ -1,4 +1,5 @@
 <main id='course' class='main-content'>
+     <?php init_posts() ?>
      <?php while (have_posts()) {
           the_post(); ?>
           <?php
@@ -51,7 +52,7 @@
                          </div>
                          <div class="ph-03">
                               <span class="dashicons dashicons-admin-site-alt3"></span>
-                              <?php echo(  get_field('language_setting')) ?>
+                              <?php echo (get_field('language_setting')) ?>
                          </div>
                     </aside>
                     <aside class=" mv-1">
@@ -125,7 +126,7 @@
                     </section>
                     <section class="clearfix mb-2">
                          <!-- <select class='right'> -->
-                              <!-- <option>Latest Reviews</option> -->
+                         <!-- <option>Latest Reviews</option> -->
                          <!-- </select> -->
                     </section>
 
@@ -250,21 +251,21 @@
                                    </p>
                                    <div class="flex flex-col flex-left">
 
-                                  <?php
-     $links = get_field('external_links');
-     if ($links) {
-          foreach($links as $currentField) {
-               if ($currentField) {
-                    ?>
-<a class="blue underline mv-03" href="<?= sanitize_url($currentField['link']) ?>">
-<?php echo url_to_icon($currentField['link']) ?><?= sanitize_text_field($currentField['label']) ?></a>
-                    <?php 
+                                        <?php
+                                        $links = get_field('external_links');
+                                        if ($links) {
+                                             foreach ($links as $currentField) {
+                                                  if ($currentField) {
+                                        ?>
+                                                       <a class="blue underline mv-03" href="<?= sanitize_url($currentField['link']) ?>">
+                                                            <?php echo url_to_icon($currentField['link']) ?><?= sanitize_text_field($currentField['label']) ?></a>
+                                        <?php
 
-               }
-          }
-     }                                 
+                                                  }
+                                             }
+                                        }
 
-                                 ?>
+                                        ?>
 
                                    </div>
 

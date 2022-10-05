@@ -1,4 +1,6 @@
 <div id='test-page' class='test ph-3 '>
+     <?php init_posts() ?>
+
      <?php
      wp_list_pages([
           'post_type' => 'test',
@@ -13,9 +15,9 @@
      <section>
           <?php get_template_part('/components/nav/nav-cat-courses') ?>
      </section>
-<section>
-     <?php  ?>
-</section>
+     <section>
+          <?php  ?>
+     </section>
      <h1 class="text-title text-center ">Icons </h1>
      <section class=" gridcol-5 b">
           <?php

@@ -1,4 +1,4 @@
-<header class='page-header'>
+<header class=''>
      <?php
      $ph = new PageHandler();
      $ph->redirectIfNotLogged();
@@ -9,9 +9,8 @@
      // $url .= '_mobile';
      // }
      get_template_part($url . '_mobile');
+
+     global $post;
      ?>
-
-
-
 
 </header>

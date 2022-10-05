@@ -1,17 +1,19 @@
 <?php
 
 
-               $results = searchResults([
-                    'term' => sanitize_text_field(get_query_var('term')),
-                    'rating' => sanitize_text_field(get_query_var('rating')),
-                    // 'release_year' => '2022',
-                    // 'categories' => '0',
-                    // 'courselevel' => 'beginner'
-               ]);
+$results = searchResults([
+     'term' => sanitize_text_field(get_query_var('term')),
+     'rating' => sanitize_text_field(get_query_var('rating')),
+     // 'release_year' => '2022',
+     // 'categories' => '0',
+     // 'courselevel' => 'beginner'
+]);
 
-               ?>
+?>
 
 <div class='search-page main-content'>
+     <?php init_posts() ?>
+
      <nav class='navigation-bar pl-2'>
           <h1 class='text-title bold'>
                Categories
@@ -24,7 +26,7 @@
                'hide_title_if_empty' => false,
                'orderby'             => 'name',
                'style'               => 'list',
-              
+
           ));
 
 
@@ -79,7 +81,8 @@
           </p>
           <aside class="flex-row flex mb-1 w-100 flex-between">
                <!-- <p>
-                   <?php $allsearch = new WP_Query("s=$s&showposts=-1"); echo $allsearch->found_posts; ?> Courses Found
+                   <?php $allsearch = new WP_Query("s=$s&showposts=-1");
+                    echo $allsearch->found_posts; ?> Courses Found
                </p> -->
                <?= get_query_var('username') ?>
                <p>432 Courses found </p>
@@ -94,19 +97,19 @@
                     </a>
                </div>
           </aside>
-              
+
           <section class="changeMode gridcol-3 ">
-               <?php 
-                    foreach($results as $item) {
-     // renderCourseCard($item);
-    
-                    }
-               
-               
-                ?>
+               <?php
+               foreach ($results as $item) {
+                    // renderCourseCard($item);
+
+               }
+
+
+               ?>
 
           </section>
-          
+
           <aside class='pagination w-100  '>
                <span class="selected">1</span>
                <span>2</span>

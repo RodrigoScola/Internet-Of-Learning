@@ -1,4 +1,5 @@
 <main class="main-content  ">
+     <?php init_posts() ?>
 
 
      <h1 class='text-center text-md bold'>

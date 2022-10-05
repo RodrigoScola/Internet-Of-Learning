@@ -1,4 +1,5 @@
 <div class='search-page main-content'>
+     <?php init_posts() ?>
 
      <?php
      $type = sanitize_text_field($_GET['type']);
@@ -16,10 +17,10 @@
                <div class="flex flex-row flex-between center-items">
                     <h3 class="text-title text-md bold">Our Blog</h3>
 
-                        
-                         [ChangeMode]
-                         
-                         
+
+                    [ChangeMode]
+
+
                </div>
           </aside>
           <section class="changeMode courses gridcol-3 gap-2">

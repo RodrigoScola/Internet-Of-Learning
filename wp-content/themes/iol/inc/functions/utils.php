@@ -1,12 +1,21 @@
 <?php
 
-function array_to_object(array $array, $defaults) {
-    $narr = [];
+function add_breadcums()
+{
+     if (function_exists('yoast_breadcrumb')) {
+          yoast_breadcrumb('<p id="breadcrumbs">', '</p>');
+     }
+}
 
-    foreach($array as $item) {
+
+function array_to_object(array $array, $defaults)
+{
+     $narr = [];
+
+     foreach ($array as $item) {
           $narr[$item] = $defaults;
-    }
-    return $narr;
+     }
+     return $narr;
 }
 
 
@@ -22,31 +31,30 @@ class PageHandler
      {
           if (!$post_id) {
                global $post_id;
-               
           }
           $this->post_id = $post_id;
           $params = [];
           foreach ($_GET as $key => $value) {
-              if (gettype($value) == 'string') {
-                    
-               if (str_contains($value,',')) {
+               if (gettype($value) == 'string') {
+
+                    if (str_contains($value, ',')) {
                          $value = explode(',', $value);
+                    }
                }
-              }
-           
+
                $params[$key] = $value;
           }
           $this->pageParams = $params;
           return $params;
      }
-     public  function LogOutIfLoggedIn($post_id = null){
-         if ($post_id == null) {
-          $post_id = $this->post_id ? $this->post_id : get_the_ID();
-         }
+     public  function LogOutIfLoggedIn($post_id = null)
+     {
+          if ($post_id == null) {
+               $post_id = $this->post_id ? $this->post_id : get_the_ID();
+          }
           $post = get_post($post_id);
           if (array_search($post->post_name, PageHandler::$logInTypePages)) {
                wp_logout();
-
           }
      }
      function redirectIfNotLogged($post_id = null)
@@ -100,7 +108,7 @@ class PageHandler
                return $item;
           }));
      }
-     
+
      public  function toQuery($arr = [])
      {
           if (!$arr) {
@@ -110,13 +118,13 @@ class PageHandler
           foreach ($arr as $key => $value) {
                if ($key !== 'url') {
                     if (gettype($value) == 'array') {
-                         foreach($value as $currentValue) {
+                         foreach ($value as $currentValue) {
                               $str .= $key . '=' . $currentValue . '&';
                          }
                     } else {
 
 
-                    $str .= $key . '=' . $value . '&';
+                         $str .= $key . '=' . $value . '&';
                     }
                } else {
                     $str .= $value;

@@ -269,6 +269,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _hooks_useDisclosure__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../hooks/useDisclosure */ "./src/pages/hooks/useDisclosure.js");
+
 
 
 const Tooltip = _ref => {
@@ -318,7 +320,14 @@ function useDisclosure() {
   };
 
   const ontoggle = () => {
-    return setOpen(curr => !curr);
+    console.trace("who called");
+    console.log("asfd");
+
+    if (isOpen == true) {
+      return setOpen(false);
+    } else {
+      return setOpen(true);
+    }
   };
 
   return {

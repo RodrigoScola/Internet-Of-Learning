@@ -1,22 +1,23 @@
 <div id='page-password-reset' class='center-items confirmation-page main-content'>
-     <?php 
-          while(have_posts()) {
-     the_post();
+     <?php init_posts() ?>
+
+     <?php
+     while (have_posts()) {
+          the_post();
 
      ?>
-     <section>
+          <section>
 
-     <h1 class="text-title  bold">Forgot Your Password?</h1>
-     <?php 
+               <h1 class="text-title  bold">Forgot Your Password?</h1>
+          <?php
 
-     the_content();
+          the_content();
+     }
 
-          }
-     
-     
-      ?>
 
-     </section>
+          ?>
+
+          </section>
 
 
 </div>

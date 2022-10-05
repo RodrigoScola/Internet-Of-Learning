@@ -1,4 +1,5 @@
 <section class="ph-10 w-100 main-content">
+     <?php init_posts() ?>
 
      <h1 class='text-title text-md bold'>
           Article Title

@@ -32,6 +32,6 @@ new IOL_ANIMATION('SlideUp', [
 new IOL_ANIMATION('SlideLeft', [
      'direction' => 'left'
 ]);
-new IOL_ANIMATION('SlideRight',[
+new IOL_ANIMATION('SlideRight', [
      'direction' => "right"
 ]);

@@ -41,7 +41,7 @@ function renderSearchPagination($args = [
                <a class="<?php echo $currPage == $args['max_num_pages'] ? 'disabled' : 'pl-05' ?>" href='<?php echo changePageTo($args['max_num_pages']) ?>'>[IconLast]</a>
           </div>
      </div>
-<?php }
+     <?php }
 
 function renderPagination($pages = null, $options = [
      'base' => ''
@@ -71,28 +71,27 @@ function renderPagination($pages = null, $options = [
 
      $pagenum = get_query_var('paged');
 
-if ($pages->max_num_pages > 1) {
+     if ($pages->max_num_pages > 1) {
 
 
-?>
+     ?>
 
-     <div class="flex flex-row center-items flex-center">
-          <div class="pagination-icons ph-04">
-               <a href="<?php echo $permalink ?>" class="<?php echo $pagenum !== 0 ?: 'disabled' ?>">[IconFirst]</a>
-               <?php if (!get_query_var('paged')) { ?>
-                    <a class="ph-1 disabled">[IconPrevious]</a>
-               <?php
-               } ?>
+          <div class="flex flex-row center-items mv-2 flex-center">
+               <div class="pagination-icons ph-04">
+                    <a href="<?php echo $permalink ?>" class="<?php echo $pagenum !== 0 ?: 'disabled' ?>">[IconFirst]</a>
+                    <?php if (!get_query_var('paged')) { ?>
+                         <a class="ph-1 disabled">[IconPrevious]</a>
+                    <?php
+                    } ?>
+               </div>
+               <?php echo paginate_links($args);
+
+               ?>
+               <div class="pagination-icons ph-04">
+                    <?php echo get_query_var('paged') == $pages->max_num_pages ? '<a class="ph-1 disabled">  ' . do_shortcode('[IconNext]') . '</a>' : "" ?>
+                    <a class="<?php echo get_query_var('paged') == $pages->max_num_pages ? 'disabled' : 'pl-05' ?>" href='<?php echo $permalink . 'page/' . $pages->max_num_pages ?>'>[IconLast]</a>
+               </div>
           </div>
-          <?php echo paginate_links($args);
-
-          ?>
-          <div class="pagination-icons ph-04">
-               <?php echo get_query_var('paged') == $pages->max_num_pages ? '<a class="ph-1 disabled">  ' . do_shortcode('[IconNext]') . '</a>' : "" ?>
-               <a class="<?php echo get_query_var('paged') == $pages->max_num_pages ? 'disabled' : 'pl-05' ?>" href='<?php echo $permalink . 'page/' . $pages->max_num_pages ?>'>[IconLast]</a>
-          </div>
-     </div>
 <?php
+     }
 }
-}
-

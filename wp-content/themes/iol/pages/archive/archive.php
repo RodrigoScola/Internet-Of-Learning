@@ -18,6 +18,8 @@ $levelArr = explode(',', $f->pageParams['course_level']);
 ?>
 
 <div class='search-page main-content pb-4 ph-03'>
+  <?php init_posts() ?>
+
   <form method="GET">
     <input type="hidden" name="term" value="<?php echo $f->pageParams['term'] ?: "" ?>" />
 
@@ -107,12 +109,12 @@ $levelArr = explode(',', $f->pageParams['course_level']);
     </nav>
   </form>
   <div class="searchlist">
-    
+
     <aside class="flex-row flex mb-1 w-100 flex-between">
-    
-      
+
+
       <div class="align-center ">
-     
+
         <a id='change-mode' href='' class="bg-blue  p-06 btn-round_semi inlineblock mh-1">
           <span class="dashicons dashicons-align-right white"></span>
         </a>
@@ -120,16 +122,15 @@ $levelArr = explode(',', $f->pageParams['course_level']);
     </aside>
 
     <section class="changeMode courses gridcol-3 gap-2">
-      <?php 
-        while(have_posts()) {
-  the_post();
-  get_template_part('/components/cards/blog-card');
+      <?php
+      while (have_posts()) {
+        the_post();
+        get_template_part('/components/cards/blog-card');
+      }
 
-        }
-      
-      
-      
-       ?>
+
+
+      ?>
 
     </section>
     <div class="ph-3">

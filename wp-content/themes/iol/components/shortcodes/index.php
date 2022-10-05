@@ -16,4 +16,4 @@ require_once get_theme_file_path('/components/shortcodes/ui/Pagination.php');
 require_once get_theme_file_path('/components/shortcodes/ui/Animations.php');
 require_once get_theme_file_path('/components/shortcodes/ui/Link.php');
 require_once get_theme_file_path('/components/shortcodes/posts/sortPosts.php');
-
+require_once get_theme_file_path('/components/shortcodes/containers/Slide.php');

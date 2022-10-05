@@ -1,4 +1,6 @@
 <main class="main-content">
+     <?php init_posts() ?>
+
      <article class="hero">
           <section>
                <h1 class='text-title bold text-md'>
@@ -167,7 +169,7 @@
                </p>
           </section>
      </article>
-<div class="flex mv-3">
-[FindMyCourse]
-</div>
+     <div class="flex mv-3">
+          [FindMyCourse]
+     </div>
 </main>

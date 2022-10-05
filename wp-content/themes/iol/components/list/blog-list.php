@@ -7,7 +7,7 @@
 
 
           <p class="p-0 m-0">
-               <?= sanitize_text_field(get_the_excerpt()) ?>
+               <?php echo get_the_excerpt() ?>
           </p>
      </div>
 

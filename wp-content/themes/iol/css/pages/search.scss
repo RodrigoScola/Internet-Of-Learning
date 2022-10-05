@@ -1,6 +1,6 @@
 .search-page {
      display: grid;
-     grid-template-columns: auto 80%;
+     grid-template-columns:  minmax(20%, 200px) auto;
 
      .courses {
           padding-right: 3em;
@@ -42,4 +42,17 @@
       
           grid-template-columns: 1fr;
      }
+}
+.search-button-text {
+     &::after {
+          padding-left: 1em;
+          content: "Find A Course";
+     }
+}
+@media only screen  and (max-width: 1075px) {
+  .search-button-text {
+    &::after {
+      content: "" !important;
+    }
+  }
 }

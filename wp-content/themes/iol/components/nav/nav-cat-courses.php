@@ -19,7 +19,7 @@ $levelArr = explode(',', $f->pageParams['course_level']);
           <h1 class='text-title bold'>
                Categories
           </h1>
-           <?php
+          <?php
           $categories = get_categories(array(
                'order'               => 'ASC',
                'orderby'             => 'name',
@@ -42,10 +42,10 @@ $levelArr = explode(',', $f->pageParams['course_level']);
           <?php }
           }
           wp_reset_postdata()
-          ?> 
+          ?>
 
 
-               <div class="flex flex-col">
+          <div class="flex flex-col">
                <p class="bold ">Level</p>
 
                <label class="inlineflex ">
@@ -60,8 +60,8 @@ $levelArr = explode(',', $f->pageParams['course_level']);
                <label class="inlineflex ">
                     <input name='courselevel[]' value='master' class='checkbox mr-05' type="checkbox" /> Master
                </label>
-               </div>
-               <div class='flex flex-col'>
+          </div>
+          <div class='flex flex-col'>
 
                <p class="bold mb-09 pl-02">Release date</p>
                <label class="inlineflex ">
@@ -76,8 +76,8 @@ $levelArr = explode(',', $f->pageParams['course_level']);
                <label class="inlineflex ">
                     <input name='release_year[]' value='2019' class='checkbox mr-05 mb-03' type="checkbox" /> 2019
                </label>
-               </div>
-               <div class="flex flex-col">
+          </div>
+          <div class="flex flex-col">
 
                <p class="bold  ">Rating</p>
 
@@ -91,7 +91,7 @@ $levelArr = explode(',', $f->pageParams['course_level']);
 
                <?php
                } ?>
-               </div>
+          </div>
 
           <!-- <noscript> -->
           <div id="search-container" class="center mv-05">

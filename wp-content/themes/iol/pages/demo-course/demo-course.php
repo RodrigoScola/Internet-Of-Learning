@@ -1,4 +1,5 @@
 <main class="main-content">
+     <?php init_posts() ?>
 
 
      <article class='course'>

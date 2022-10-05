@@ -1,4 +1,6 @@
 <article class='gridcol-5 mv-4 main-content '>
+     <?php init_posts() ?>
+
      <?php
 
 
@@ -9,30 +11,30 @@
      }
      $orderby = sanitize_key(get_query_var('orderby'));
 
-$coursesArr = [
-     'paged' => get_query_var('paged', 1),
-     'post_type' => 'courses',
-     'author' => get_current_user_id(),
-     'post_status' => ['draft', 'publish', 'private'],
-     'posts_per_page' => 6,
-     'orderby' => 'id',
-     
-];
+     $coursesArr = [
+          'paged' => get_query_var('paged', 1),
+          'post_type' => 'courses',
+          'author' => get_current_user_id(),
+          'post_status' => ['draft', 'publish', 'private'],
+          'posts_per_page' => 6,
+          'orderby' => 'id',
+
+     ];
      if (get_query_var('sort') !== 'latest') {
           $coursesArr['meta_query'] = [
-          'relation' => "OR",
-          [
-               'key' => 'review_score',
-               'compare' => 'NOT EXISTS',
-               'value' => '',
-          ],
-          [
-               'key' => 'review_score',
-               'compare' => '>=',
-               'value' => "0"
-          ]
-     ];
-     $coursesArr['orderby'] = 'meta_value_num';
+               'relation' => "OR",
+               [
+                    'key' => 'review_score',
+                    'compare' => 'NOT EXISTS',
+                    'value' => '',
+               ],
+               [
+                    'key' => 'review_score',
+                    'compare' => '>=',
+                    'value' => "0"
+               ]
+          ];
+          $coursesArr['orderby'] = 'meta_value_num';
      }
 
 
@@ -51,7 +53,7 @@ $coursesArr = [
                     <a href='<?php echo site_url() . '/new-course' ?>' class="btn btn-yellow bold ">List a course</a>
 
 
-<?php                }
+               <?php                }
 
 
                ?>

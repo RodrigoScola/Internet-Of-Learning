@@ -1,4 +1,6 @@
 <div class='component404 main-content'>
+     <?php init_posts() ?>
+
      <h1 class="text-center text-title bold text-gnt">Page 404 not found</h1>
      <div class='divider-lg'></div>
      <p class='text-center '>Oops! seems that page you are looking for might have been removed had its name changed</p>

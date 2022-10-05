@@ -1,7 +1,7 @@
 <main class="main-content">
+     <?php init_posts() ?>
+
      <div class="hero">
-
-
           <div class='hero-left'>
                <h1 class='text-title bold text-lg'>
 
@@ -18,7 +18,7 @@
           </div>
      </div>
      <div>
-          <h3 class='text-sm bold text-center  text-title '>We list the best courses from world-class educators to help you find the perfect career fit</h3>
+          <h1 class='text-sm bold text-center  text-title '>We list the best courses from world-class educators to help you find the perfect career fit</h1>
      </div>
 
 
@@ -27,10 +27,7 @@
                <i class="bi yellow bi-search ph-03"></i>
                <input class='input' name='term' type="search" placeholder="What do you want to learn?" />
           </div>
-          <button class='btn btn-yellow btn-round_right h-max btn-sm ' type="submit">
-               <i class="bi bi-search"></i>
-               <span>Find my course</span>
-          </button>
+          <button class='search-button-text btn btn-sm btn-yellow btn-round_right w-20' type="submit"><i class="searchicon bi bi-search"></i></button>
      </form>
 
      <div class='divider--lg'></div>
@@ -50,9 +47,8 @@
 
                foreach ($categories as $category) {
                     // var_dump($category);
-                    $coursesCount = (int)get_term_meta($category->term_id, 'courses_count', true);
-                    // var_dump($coursesCount);
-                    if ($coursesCount > 0) {
+
+                    if ($category->post_count['courses'] > 0) {
                          echo '<button class="btn zoom-in_hover m-05 btn-teal white btn-round"><a href="' . esc_url(site_url('/' . $category->slug)) . '">' . $category->name . '</a></button>';
                     }
                }
@@ -64,8 +60,8 @@
           </section>
      </article>
      <h4 class="text-title text-md bold text-center">Choose The Right Course To Upskill Your Career & Personal Life</h4>
-     <article class="cards ">
-          <section class="card h-auto  ">
+     <article class="cards w-100">
+          <section class="card  ">
                <div class="card-image"><img src="<?php echo get_theme_file_uri('images/svgs/card1.png') ?>" /></div>
                <h2 class="card-title">Acess to high-quality courses</h2>
                <p class='card-subtitle'>We list only the best courses on our platform so that you can be assured of getting a quality education.</p>
@@ -186,19 +182,31 @@
           <h1 class='text-title  text-center bold '>Here’s The List Of Top-Rated Courses Recommended By Students</h1>
           <h2 class='text-center text-xsm'>See the best reviewed courses on our platform
           </h2>
-          <section class='gridcol-3 gap mh-03'>
-               <?php
-               $courses = new Courses();
-               $top  = $courses->getTopPosts();
-               while ($top->have_posts()) {
-                    $top->the_post();
-                    get_template_part('components/list/course-list');
-               }
+          [Slider class='']
+          <?php
+          $courses = new Courses();
+          $top  = $courses->getTopPosts();
+          while ($top->have_posts()) {
+               $top->the_post();
+          ?>
 
-
+               [Slide class='m-auto ']
+               <?php get_template_part('components/list/course-list');
                ?>
-          </section>
+               [/Slide] <?php
+                    }
+                         ?>
+
+          [/Slider]
+
+
      </article>
+
+
+
+
+
+
 
 
 </main>

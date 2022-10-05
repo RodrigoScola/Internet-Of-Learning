@@ -1,13 +1,15 @@
 <article class='account-settings  mv-4 ph-2 gridcol-5 main-content'>
+     <?php init_posts() ?>
+
      <?php get_template_part('/components/nav/nav', 'dashboard');
 
      $currentUser = new User();
 
-     
+
      if ($_POST) {
           $currentUser->updateUserInformation($_POST);
      }
-?>
+     ?>
      <section class="dsboard-content mr-2 griditem-2  griditem-2-4">
           <h1 class="text-title bold text-lg">
                Account Settings
@@ -20,7 +22,7 @@
                     if ($currentUser->account_type() == 'premium') { ?>
                          <label class='text-xsm text-title m-0 bold'>
                               Account Type
-                              <input  value='<?php echo $currentUser->account_type() ?>' class='input mb-1' disabled />
+                              <input value='<?php echo $currentUser->account_type() ?>' class='input mb-1' disabled />
                          </label>
                          <button class="btn white btn-red bold">Cancel Subscription</button>
                     <?php } else { ?>

@@ -3,12 +3,14 @@
 while (have_posts()) {
      the_post(); ?>
      <div class='admin-dashboard gridcol-6 main-content'>
+          <?php init_posts() ?>
+
           <?php get_template_part('components/nav/nav', 'admin-dashboard-user')     ?>
           <section class="griditem-2-5 mh-2 mb-2">
                <h1 class="text-title text-lg bold">Course Details</h1>
                <?php $currpage = get_the_ID();
-  
-    echo  do_shortcode('[ListPages post_id=' . $currpage . ']');
+
+               echo  do_shortcode('[ListPages post_id=' . $currpage . ']');
                ?>
                <?php
                $courses = new WP_Query([

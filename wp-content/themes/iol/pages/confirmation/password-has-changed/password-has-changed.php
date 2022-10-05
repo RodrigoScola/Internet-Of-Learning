@@ -1,13 +1,15 @@
 <?php $curruser = new User(); ?>
 <div class='main-content confirmation-page thank-you-for-signing-up center-items '>
+     <?php init_posts() ?>
+
      <?php
      while (have_posts()) {
           the_post();
-     global $post;
-     do_action('iol_before_confirmation_post', $post);
-          
-          
-           ?>
+          global $post;
+          do_action('iol_before_confirmation_post', $post);
+
+
+     ?>
 
           <section>
                <h1 class="text-title text-center bold">
@@ -21,7 +23,7 @@
                </p>
                <div class="center">
 
-               <a href='<?php echo esc_url(site_url('/login')) ?>' class="btn btn-yellow zoom-in_hover bold">Click Here To Log In!</a>
+                    <a href='<?php echo esc_url(site_url('/login')) ?>' class="btn btn-yellow zoom-in_hover bold">Click Here To Log In!</a>
                </div>
           </section>
      <?php

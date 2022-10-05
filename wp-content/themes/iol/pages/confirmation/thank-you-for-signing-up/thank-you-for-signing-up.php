@@ -1,5 +1,8 @@
 <?php $curruser = new User(); ?>
+
 <div class='main-content confirmation-page thank-you-for-signing-up center-items '>
+     <?php init_posts() ?>
+
      <?php
      while (have_posts()) {
           the_post(); ?>

@@ -1,4 +1,6 @@
 <main class="main-content">
+     <?php init_posts() ?>
+
      <div class='ph-7'>
           <h1 class='text-title text-lg '>Sign in to Internet of learning</h1>
           <p class='subtitle subtitle-sm '>To write a review, you need to set up an account on The Internet of Learning. </p>

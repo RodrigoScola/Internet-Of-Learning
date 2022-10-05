@@ -1,4 +1,6 @@
 <article class="w-70 main-content ">
+     <?php init_posts() ?>
+
      <?php get_template_part('/components/heading/header', 'services') ?>
      <div style="height: 3px;" class="w-100 m-auto bg-lightgray"></div>
      <h1 class="text-title text-lg bold text-center ">Your Order</h1>
@@ -10,7 +12,7 @@
           <div>
                <p class="text-title bold text-sm">Price</p>
                <p>$12.34</p>
-               
+
           </div>
      </section>
      <section>

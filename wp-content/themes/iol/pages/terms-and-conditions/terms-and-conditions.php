@@ -1,8 +1,10 @@
 <main class='w-80 flex main-content flex-left m-auto'>
+     <?php init_posts() ?>
+
      <aside class="flex flex-left align mt-1 ">
           <a href="<?php echo esc_url(site_url('/')) ?>">Internet Of Learning</a>
           [IconNext class="mh-04"]
-          <a >Terms And Conditions</a>
+          <a>Terms And Conditions</a>
      </aside>
      <section>
           <h1 class='text-title text-lg bold '>

@@ -231,7 +231,14 @@ function useDisclosure() {
   };
 
   const ontoggle = () => {
-    return setOpen(curr => !curr);
+    console.trace("who called");
+    console.log("asfd");
+
+    if (isOpen == true) {
+      return setOpen(false);
+    } else {
+      return setOpen(true);
+    }
   };
 
   return {

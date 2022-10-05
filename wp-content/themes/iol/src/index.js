@@ -8,7 +8,9 @@ import { AnimHandler } from "./pages/animations/buttonSubmit"
 import { formatter } from "./utils"
 import { Nav } from "./pages/components/ui/menus/Nav"
 import { Header } from "./pages/components/ui/menus/Header"
+import HeroSlider from "./modules/Slider"
 
+const slider = new HeroSlider()
 const animations = new AnimHandler()
 
 window.addEventListener("load", () => {
@@ -22,11 +24,11 @@ window.addEventListener("load", () => {
 	)
 
 	// if (!ioldata.is_mobile) {
-	if (ioldata.slug == "inputs") {
-		const nav = document.querySelector(".navigation-bar")
-		const navHtml = nav.innerHTML
-		ReactDOM.render(<Nav innerHTML={navHtml} />, nav)
-	}
+	// if (ioldata.slug == "inputs") {
+	const nav = document.querySelector(".search-page .navigation-bar")
+	const navHtml = nav.innerHTML
+	ReactDOM.render(<Nav innerHTML={navHtml} />, nav)
+	// }
 
 	// }
 	// add jquery to all elements, even react

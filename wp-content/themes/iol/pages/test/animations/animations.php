@@ -1,4 +1,6 @@
 <div class='animations main-content ph-4'>
+     <?php init_posts() ?>
+
      <section>
           <h1 class="text-title text-center bold">Animations</h1>
           <button class="btn btn-blue-hollow zoom-in_click">Zoom In</button>

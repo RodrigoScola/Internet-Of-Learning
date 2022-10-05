@@ -1,4 +1,6 @@
 <article class='my-courses  mr-2 mv-4 gridcol-5 main-content'>
+     <?php init_posts() ?>
+
      <?php get_template_part('/components/nav/nav', 'dashboard');
 
      $currentUser = new User();
@@ -30,17 +32,16 @@
      <section class="dsboard-content mr-2 griditem-2 griditem-2-4">
           <h1 class='text-title text-center bold'>My Courses</h1>
           <section class="courses gap-2">
-               <?php 
-                   while($posts->have_posts()) {
+               <?php
+               while ($posts->have_posts()) {
 
-     $posts->the_post();
+                    $posts->the_post();
                     get_template_part('/components/cards/card-dashboard');
+               }
 
-                   }
-               
-               
-               
-                ?>
+
+
+               ?>
           </section>
           <?php echo renderPagination($posts) ?>
      </section>

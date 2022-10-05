@@ -2,6 +2,8 @@
     <link rel="stylesheet" href="<?php echo get_theme_file_uri('build/index.css') ?>">
     <link rel="stylesheet" href="<?php echo get_theme_file_uri('build/style-index.css') ?>">
     <div class='admin-dashboard main-content gridcol-6'>
+         <?php init_posts() ?>
+
          <?php get_template_part('components/nav/nav', 'admin-dashboard-user')     ?>
          <?php
           $userdata = new User(sanitize_key(get_query_var('username')));

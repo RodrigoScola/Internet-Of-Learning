@@ -15,14 +15,12 @@
      ));
 
      foreach ($categories as $category) {
-          $coursesCount = (int)get_term_meta($category->term_id, get_post_type() . '_count', true);
+          $coursesCount = $category->post_count['post'];
           // var_dump($coursesCount);
           if ($coursesCount > 0) {
-
      ?>
                <p>
-
-                    <a class="<?= $currentCategory == strtolower($category->name) ?  "bg-blue round" : "" ?> p-04 zoom-in_hover" href="<?php echo site_url() .  $category->slug ?>/?type=post"><?php echo "{$category->name} ({$coursesCount})" ?></a>
+                    <a class="<?= $currentCategory == strtolower($category->name) ?  "bg-blue round" : "" ?> p-04 zoom-in_hover" href="<?php echo site_url('/' . $category->slug . '/?type=post') ?>"><?php echo "{$category->name} ({$coursesCount})" ?></a>
                </p>
      <?php }
      }

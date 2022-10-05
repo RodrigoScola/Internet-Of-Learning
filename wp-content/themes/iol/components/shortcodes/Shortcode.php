@@ -1,11 +1,28 @@
 <?php
+
+
+function formatAtts($atts = [], $defaultAtts = [])
+{
+     $df = [
+          'class' => '',
+          'id' => '',
+     ];
+     $defaultAtts = wp_parse_args($defaultAtts, $df);
+     $atts = array_change_key_case((array)$atts, CASE_LOWER);
+     $nats = shortcode_atts($defaultAtts, $atts);
+     return $nats;
+}
+
 class Shortcode
 {
      public $defaultAtts;
 
 
-     public function formatAtts($atts = [])
+     public function formatAtts($atts = [], $defaultAtts = [])
      {
+          if ($defaultAtts == []) {
+               $defaultAtts = $this->defaultAtts;
+          }
           $atts = array_change_key_case((array)$atts, CASE_LOWER);
           $nats = shortcode_atts($this->defaultAtts, $atts);
           return $nats;
@@ -16,7 +33,7 @@ class Shortcode
      }
      public function renderHtml($atts = [], $content = false)
      {
-          $nats = $this->formatAtts($atts);
+          $nats = formatAtts($atts, $this->defaultAtts);
           ob_start();
           $this->classHtml($nats, $content);
           return ob_get_clean();
@@ -29,7 +46,7 @@ function renderLastPage($atts = null, $content)
      ob_start();
 
 ?>
-     <input style="display: none;" type='radio' name='last_page' value='<?php sanitize_text_field(get_query_var('path')) ?>' checked ?>
+     <input style="display: none;" type='radio' name='last_page' value='<?php sanitize_text_field(get_query_var('path')) ?>' checked />
 
 
 <?php

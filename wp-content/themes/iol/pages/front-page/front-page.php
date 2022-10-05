@@ -1,4 +1,6 @@
 <main class="main-content">
+     <?php init_posts() ?>
+
      <div class="hero">
           <div class='hero-left'>
                <h1 class='text-title bold text-lg'>

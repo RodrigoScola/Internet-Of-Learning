@@ -1,4 +1,6 @@
 <div class='main-content admin-dashboard gridcol-6'>
+     <?php init_posts() ?>
+
      <?php get_template_part('components/nav/nav', 'admin-dashboard')     ?>
      <section class="griditem-2-5 mr-4">
           <h1 class="text-title text-lg bold">Users</h1>
@@ -67,7 +69,7 @@
                          <?php }
                     }
                     wp_reset_postdata();
-echo '<h1>Courses</h1>'; 
+                    echo '<h1>Courses</h1>';
                     while ($courseQ->have_posts()) {
                          $courseQ->the_post();
                          ?>

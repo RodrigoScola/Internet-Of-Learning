@@ -1,4 +1,5 @@
 <div id='course-reviews' class='dsboard mv-4 main-content course-reviews'>
+     <?php init_posts() ?>
 
      <?php
      while (have_posts()) {

@@ -1,4 +1,5 @@
 <div class='main-content dsboard mv-4 course-widgets'>
+     <?php init_posts() ?>
 
      <section class="navigarion-bar ph-2">
           <button onclick="location.href = `<?php echo site_url() . '/dashboard' ?>` " style='border: none' class=" greenwhite bg-transparent mv-02 p-2">Back to list</button>

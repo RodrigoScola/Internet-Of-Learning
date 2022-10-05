@@ -1,4 +1,6 @@
 <main class="main-content">
+     <?php init_posts() ?>
+
      <section class='hero'>
           <div class=''>
                <h1 class='text-title bold text-md'>Are you a course creator looking boost your course sales find your ideal audience? List your course on the <span class="text-md bold blue">Internet of Learning</span>!</h1>
@@ -108,7 +110,7 @@
                </div>
                <div class='card'>
                     <h1 class='text-xsm bold text-title'>Kate, Los Angeles</h1>
-                   <?php renderStars(5) ?>
+                    <?php renderStars(5) ?>
                     <p class='quote'>
                          "I was on the fence about this marketplace but with the free listing option, I was able to give it a try and I'm so glad I did! The premium package is worth every penny! The traffic to my course page increased significantly and I was able to make a few sales within 1 month of subscription. Definitely worth checking out."
                     </p>
@@ -122,7 +124,7 @@
                </div>
           </div>
      </div>
-     <h1 class='text-md text-title text-center bold'>Join 1000s Of Educators Who Are Achieving Their Business Goals</h1>
+     <h3 class='text-md text-title pv-2 text-center bold'>Join 1000s Of Educators Who Are Achieving Their Business Goals</h3>
      <div class='cards'>
           <div class='card'>
                <img src='<?php echo get_theme_file_uri('/images/svgs/card5.png') ?>' class='card-image' />
@@ -145,7 +147,7 @@
                </p>
           </div>
           <div class='card'>
-              <img class="card-image" src='<?php echo get_theme_file_uri('/images/svgs/card9.png') ?>' />
+               <img class="card-image" src='<?php echo get_theme_file_uri('/images/svgs/card9.png') ?>' />
                <h1 class='card-title'>
                     Save Time
                     and Money

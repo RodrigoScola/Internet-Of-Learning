@@ -1,4 +1,6 @@
 <div class='admin-dashboard gridcol-6 main-content'>
+     <?php init_posts() ?>
+
      <?php get_template_part('/components/nav/nav-admin-dashboard') ?>
      <section class="griditem-2-5">
           <h1 class="text-title text-lg bold">Dashboard</h1>
@@ -29,7 +31,7 @@
           <?php $allUsers = new WP_User_Query([
                'role__not_in' => 'administrator',
           ]);
-$currInfo = new User(get_current_user_id());
+          $currInfo = new User(get_current_user_id());
           ?>
           <section class="mb-5">
                <h2 class="text-title bold text-lg ">Latest Users </h2>

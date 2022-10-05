@@ -1,4 +1,6 @@
 <div class='page main-content'>
+     <?php init_posts() ?>
+
      <?php while (have_posts()) {
 
           $ph = new PageHandler();

@@ -2,6 +2,8 @@
 while (have_posts()) {
      the_post(); ?>
      <div id='test-page' class='test ph-3 '>
+          <?php init_posts() ?>
+
           <h1 class="text-title text-center ">Icons</h1>
           <section class=" gridcol-5 b">
                <?php

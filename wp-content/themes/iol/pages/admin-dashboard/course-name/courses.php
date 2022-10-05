@@ -2,6 +2,8 @@
     <link rel="stylesheet" href="<?php echo get_theme_file_uri('build/index.css') ?>">
     <link rel="stylesheet" href="<?php echo get_theme_file_uri('build/style-index.css') ?>">
     <div class='admin-dashboard main-content gridcol-6'>
+         <?php init_posts() ?>
+
          <?php get_template_part('components/nav/nav', 'admin-dashboard-user')     ?>
          <?php
           $userdata = new User(sanitize_key(get_query_var('username')));
@@ -27,10 +29,10 @@
                ]);
                if ($courses->post_count == 0) { ?>
 
-                    <h1 class="text-title">There are no courses from this user</h1>
+                   <h1 class="text-title">There are no courses from this user</h1>
 
 
-               <?php }
+              <?php }
                while ($courses->have_posts()) {
                     $courses->the_post(); ?>
 
@@ -70,11 +72,11 @@
                         </label>
                         <div class="griditem-1-2  p-1 mv-01">
 
-                        <div class="right ">
+                             <div class="right ">
 
-                             <button type="submit" value="<?php echo get_the_ID() ?>" name='courseId' class="btn  btn-blue-hollow"><?php echo get_post_status() == 'draft' ? 'List Course' : 'De-list Course' ?></button>
-                             <button  name='courseId' class="btn h-fit bold  btn-yellow">Priority List Course</button>
-                        </div>
+                                  <button type="submit" value="<?php echo get_the_ID() ?>" name='courseId' class="btn  btn-blue-hollow"><?php echo get_post_status() == 'draft' ? 'List Course' : 'De-list Course' ?></button>
+                                  <button name='courseId' class="btn h-fit bold  btn-yellow">Priority List Course</button>
+                             </div>
                         </div>
                    </form>
               <?php }
@@ -82,5 +84,5 @@
 
          </section>
     </div>
-    
+
     <?php get_template_part('/blocks/footer/footer'); ?>

@@ -15,6 +15,8 @@ $levelArr = get_query_var('courselevel', []);
 ?>
 
 <div class='search-page main-content pb-4 ph-03'>
+     <?php init_posts() ?>
+
      <form method="GET">
           <input type="hidden" name="term" value="<?php echo $f->pageParams['term'] ?: "" ?>" />
 

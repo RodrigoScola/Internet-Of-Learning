@@ -16,7 +16,11 @@ export const LogInButton = ({ text = "Log In", params = "" }) => {
 }
 export const DashBoardButton = ({}) => {
 	if (ioldata.user_id !== 0) {
-		return <a className="btn btn-blue white ">Dashboard</a>
+		return (
+			<a href={ioldata.root_url + "/dashboard"} className="btn btn-blue white ">
+				Dashboard
+			</a>
+		)
 	}
 	return <LogInButton />
 }

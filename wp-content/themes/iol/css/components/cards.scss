@@ -31,15 +31,13 @@
 
 .cards {
      display: flex; 
-     gap: 0.6em;
+  
      flex-direction: row;
      justify-content: center;
      flex-wrap: nowrap;
-
     .card {
      &:hover {
           animation: forwards cardHoverAnim 0.2s;
-
      }
      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
      border-radius: 16px;
@@ -52,7 +50,7 @@
                  display: block;
           margin-left: auto;
           margin-right: auto;
-          min-width: 200px;
+          min-width: 150px;
           width: 50%;
           }
           &-title {
@@ -83,6 +81,7 @@ letter-spacing: 0.02em;
 .course-card {
   border: 2px solid rgba($color: #000000, $alpha: 0.05);
     padding: 1em 0.5em;
+     max-width: 600px;
     height: 100% !important;
     &-image {
      width: 100%;
@@ -111,6 +110,7 @@ letter-spacing: 0.02em;
         }
         .button-group {
           height: 100%;
+         
           grid-column: 3/3;
         }
     }
@@ -132,8 +132,6 @@ letter-spacing: 0.02em;
      &-content {
           padding: 0;
           margin: 0 ;
-     max-width: 900px;
-     // background-color: #000000;
      }    
 
      &-image {

@@ -1,4 +1,6 @@
 <main class='w-80 main-content  '>
+     <?php init_posts() ?>
+
      <aside class="flex flex-left align mt-1 ">
           <a href="<?php echo esc_url(site_url('/')) ?>">Internet Of Learning</a>
           [IconNext class="mh-04"]

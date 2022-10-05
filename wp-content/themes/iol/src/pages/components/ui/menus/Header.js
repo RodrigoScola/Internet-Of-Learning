@@ -3,11 +3,13 @@ import { useDisclosure } from "../../../hooks/useDisclosure"
 import { Menu } from "./Menu"
 import { SearchForm } from "../../searchForm"
 import { Tooltip } from "../Tooltip"
+import apiFetch from "@wordpress/api-fetch"
 import { remove_invisible_tag } from "../../../../utils"
 import { Icon } from "../../Icon"
 import { HeaderButtons } from "../../utilComponents/User/HeaderButtons"
-export const Header = ({ innerHTML, categories }) => {
-	const [cat, setCat] = useState(categories.split(","))
+import { MegaMenu } from "./MegaMenu"
+export const Header = ({ innerHTML }) => {
+	const [cat, setCat] = useState([])
 	const { isOpen, onClose, onOpen, ontoggle } = useDisclosure()
 	const [type, setType] = useState("")
 	const handlemenu = (e) => {
@@ -23,16 +25,29 @@ export const Header = ({ innerHTML, categories }) => {
 			onOpen()
 		}
 	}, [type])
-
 	useEffect(() => {
-		if (innerHTML) {
-			const men = document.querySelector("#header-menu")
-			console.log(men)
+		async function go() {
+			const data = await apiFetch({
+				path: `/wp/v2/categories`,
+				method: "GET",
+
+				headers: {
+					"X-WP-Nonce": ioldata.nonce,
+				},
+			})
+			console.log(data)
+			setCat(
+				data.filter((item) => {
+					return item.count.courses > 0 && item.slug !== "blogs"
+				})
+			)
 		}
-	})
+		go()
+	}, [])
+
 	return (
 		<>
-			<div id="" class=" flex  flex-row flex-evenly center-items w-100">
+			<div id="header_mobile" class=" flex header_background flex-row flex-evenly center-items w-100">
 				<i
 					onClick={handlemenu}
 					id="search_menu"
@@ -41,7 +56,7 @@ export const Header = ({ innerHTML, categories }) => {
 					} `}
 				></i>
 				{/* <a class="" id="" href="/"> */}
-				<a class="text-title flex flex-row center-items text-md ">
+				<a class="text-title flex white flex-row center-items text-md ">
 					I<Icon iconName="brain" />L
 				</a>
 				{/* </a> */}
@@ -52,24 +67,10 @@ export const Header = ({ innerHTML, categories }) => {
 				></i>
 			</div>
 			{type == "mega_menu" && isOpen == true ? (
-				<div className="bg-white container p-2 w-100 ">
-					<ul className="min-list black">
-						<li>List your course</li>
-						<li>Visit our blog</li>
-						<ul>
-							<li>Categories</li>
-						</ul>
-					</ul>
-					<HeaderButtons />
-				</div>
+				<MegaMenu categories={cat} />
 			) : type == "search_menu" && isOpen == true ? (
-				<div className=" w-100 h-20">
+				<div className=" p-2 w-100 ">
 					<SearchForm />
-					<ul className="list round_semi p-2">
-						{cat.map((v, i) => {
-							return <li>{v}</li>
-						})}
-					</ul>
 				</div>
 			) : null}
 		</>

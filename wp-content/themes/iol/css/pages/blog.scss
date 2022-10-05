@@ -1,7 +1,5 @@
 #single-post {
-* {
-     font-family: sans-serif;
-}
+
      a {
 text-decoration: underline;
 color: $blue;
@@ -36,14 +34,17 @@ width: 100%;
      }
 }
 
-}
 table {
      tr {
           text-align: center;
      }
 }
+}
 @media only screen and (max-width: 600px) {
+     #single-post {
+
      h3 a , h3 {
           font-size: 25px !important;
+     }
      }
 }
