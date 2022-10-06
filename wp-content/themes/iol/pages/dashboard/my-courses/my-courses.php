@@ -11,7 +11,7 @@
           'post_type' => 'courses',
           'author' => get_current_user_id(),
           'post_status' => ['draft', 'publish', 'private'],
-          'posts_per_page' => 6,
+          'posts_per_page' => 3,
           'meta_query' => [
                'relation' => "OR",
                [

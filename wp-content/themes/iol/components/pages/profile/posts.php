@@ -1,13 +1,11 @@
-<article class='main-content '>
-     <?php init_posts() ?>
+<article class=''>
 
-     <div class="gridcol-5 mv-4 ">
+     <div class="">
           <?php
           $currentUser = new User();
 
 
 
-          get_template_part('/components/nav/nav', 'dashboard');
           if (!is_user_logged_in()) {
                // wp_redirect(wp_login_url());
           }
@@ -18,7 +16,7 @@
                'post_type' => 'courses',
                'author' => get_current_user_id(),
                'post_status' => ['draft', 'publish', 'private'],
-               'posts_per_page' => 6,
+               'posts_per_page' => 9,
                'orderby' => 'id',
 
           ];
@@ -45,24 +43,11 @@
 
 
 
-          <section class="griditem-2-4 griditem-2 mh-2">
-               <h1 class="text-title bold text-lg">
-                    Your Courses
-               </h1>
-               <div class="flex flex-row flex-between">
-                    <?php
-                    if ($userCourses->found_posts == 1 && $currentUser->account_type() == 'free') { ?>
-                         <a href='#' class='btn disabled '>List a course</a>;
-                    <?php } else { ?>
-                         <a href='<?php echo site_url() . '/new-course' ?>' class="btn btn-yellow bold ">List a course</a>
+          <section class="mb-6 ">
 
+               <div class="flex flex-row flex-right flex-between">
 
-                    <?php                }
-
-
-                    ?>
-
-                    <div class="flex flex-row flex-right align center-items">
+                    <div class="flex right flex-row flex-right align center-items">
                          [SortPosts]
                          [ChangeMode]
                     </div>
@@ -76,19 +61,18 @@
                     }
                     wp_reset_postdata();
 
-                    if ($currentUser->account_type() == 'free' && $userCourses->post_count > 0) {
-                         get_template_part('/components/cards/card', 'addmorecourses');
-                    }
+
 
 
                     ?>
                </section>
-               <?php
-
-               echo renderPagination($userCourses, [
-                    'base' => 'my-courses'
-               ]);
-               ?>
           </section>
      </div>
+     <?php
+
+     echo renderSearchPagination([
+          'max_num_pages' => $userCourses->max_num_pages,
+          'current' => get_query_var('paged', 1)
+     ]);
+     ?>
 </article>

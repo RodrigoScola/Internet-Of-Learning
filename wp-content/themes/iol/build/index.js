@@ -121,7 +121,7 @@ class HeroSlider {
       // document.querySelector(".glide__bullets").insertAdjacentHTML("beforeend", dotHTML)
       // Actually initialize the glide / slider script
       var glide = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"](".hero-slider", {
-        type: "slider",
+        type: "carousel",
         perView: 1,
         autoplay: 8000
       });
@@ -566,7 +566,7 @@ const SearchForm = () => {
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("form", {
     method: "GET",
     onSubmit: handleSubmit,
-    action: "http://localhost:10010/search",
+    action: ioldata.root_url + "/search/",
     class: "griditem-2-5 w-100 "
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     class: "w-100 search-tab"

@@ -17,7 +17,7 @@ class HeroSlider {
 
 			// Actually initialize the glide / slider script
 			var glide = new Glide(".hero-slider", {
-				type: "slider",
+				type: "carousel",
 
 				perView: 1,
 				autoplay: 8000,

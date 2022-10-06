@@ -16,7 +16,7 @@ export const SearchForm = () => {
 
 	console.log(ioldata.root_url)
 	return (
-		<form method="GET" onSubmit={handleSubmit} action="http://localhost:10010/search" class="griditem-2-5 w-100 ">
+		<form method="GET" onSubmit={handleSubmit} action={ioldata.root_url + "/search/"} class="griditem-2-5 w-100 ">
 			<div class="w-100 search-tab">
 				<div class="search-input  w-60">
 					<i class="searchicon bi bi-search yellow"></i>

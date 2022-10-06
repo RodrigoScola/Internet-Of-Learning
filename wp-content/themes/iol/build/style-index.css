@@ -3459,7 +3459,7 @@ details[open] > summary::before {
   border: 2px solid rgba(0, 0, 0, 0.05);
   padding: 1em 0.5em;
   max-width: 600px;
-  height: 100% !important;
+  height: auto !important;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: -webkit-min-content auto auto;
@@ -3473,6 +3473,7 @@ details[open] > summary::before {
 .course-card_list {
   display: -ms-grid;
   display: grid;
+  max-width: 100%;
   -ms-grid-columns: 30% 50% auto;
   grid-template-columns: 30% 50% auto;
 }
@@ -4548,6 +4549,59 @@ details[open] > summary::before {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+
+.um-profile.um-viewing .um-header.no-cover {
+  display: flex;
+}
+.um-profile.um-viewing .um-header.no-cover .um-profile-photo {
+  margin: 0 !important;
+  grid-area: "image";
+  width: -webkit-fit-content !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  order: 1;
+}
+.um-profile.um-viewing .um-header.no-cover .um-profile-headericon {
+  padding-left: 1em;
+  padding-top: 0.2em;
+  float: left;
+  position: static !important;
+  order: 3;
+}
+.um-profile.um-viewing .um-header.no-cover .um-profile-headericon .um-dropdown {
+  position: static !important;
+}
+.um-profile.um-viewing .um-header.no-cover .um-profile-headericon .um-dropdown-b ul li:nth-of-type(3) {
+  background-color: #f56363 !important;
+}
+.um-profile.um-viewing .um-header.no-cover .um-profile-headericon .um-dropdown-b ul li:nth-of-type(3) a {
+  color: #FFFFFF;
+}
+.um-profile.um-viewing .um-header.no-cover .um-profile-meta {
+  order: 2;
+  padding-right: 2em;
+  margin-left: 2em;
+}
+.um-profile.um-viewing .um-header.no-cover .um-profile-meta .um-main-meta .um-name {
+  width: -webkit-fit-content !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  text-transform: capitalize;
+  grid-area: "username";
+}
+.um-profile.um-viewing .um-header.no-cover .um-profile-meta .um-main-meta .um-name a {
+  font-size: 48px;
+  font-family: "Roboto Slab" !important;
+}
+.um-profile.um-viewing .um-header.no-cover .um-profile-meta .um-meta-text {
+  width: -webkit-fit-content !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  text-transform: capitalize;
+  font-size: large !important;
+  text-align: left !important;
+  grid-area: "description";
 }
 
 #um-submit-btn {

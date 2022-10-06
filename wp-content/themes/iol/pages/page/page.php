@@ -1,5 +1,12 @@
-<div class='page main-content'>
-     <?php init_posts() ?>
+<div class='page main-content ph-6'>
+     <?php init_posts();
+
+     ?>
+
+
+
+
+
 
      <?php while (have_posts()) {
 

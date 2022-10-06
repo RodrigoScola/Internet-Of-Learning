@@ -20,6 +20,10 @@ require_once get_theme_file_path('/inc/hooks/index.php');
 
 
 
+
+
+
+
 define("SCRIPT_DEBUG", true);
 
 function IOL_favicon()
@@ -332,6 +336,7 @@ add_action('template_include', function ($template) {
 
 function search_fitler_post_types($query)
 {
+
      if (!$query->is_admin && $query->is_search) {
           $query->set('post_type', array('courses'));
 

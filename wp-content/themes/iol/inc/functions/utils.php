@@ -101,12 +101,26 @@ class PageHandler
      }
 
 
-     public static function getQueryParams()
+     public static function getQueryParams($args = [])
      {
+
           global $wp;
-          return array_merge(['url' => home_url('/') . $wp->request . '/?'], array_filter($wp->query_vars, function ($item) {
+          $params = array_merge(['url' => home_url('/') . $wp->request . '/?'], array_filter($wp->query_vars, function ($item) {
                return $item;
           }));
+
+          if (!$args) {
+               return $params;
+          }
+          $nparams = [];
+          foreach ($args as $key) {
+               if (array_key_exists($key, $params)) {
+                    $nparams[$key] = $params[$key];
+               } else {
+                    $nparams[$key] = '';
+               }
+          }
+          return $nparams;
      }
 
      public  function toQuery($arr = [])
@@ -114,7 +128,7 @@ class PageHandler
           if (!$arr) {
                $arr = $this->get_page_params();
           }
-          $str = '/?';
+          $str = '';
           foreach ($arr as $key => $value) {
                if ($key !== 'url') {
                     if (gettype($value) == 'array') {
@@ -130,7 +144,7 @@ class PageHandler
                     $str .= $value;
                }
           }
-          return substr_replace($str, '', -1);;
+          return substr_replace($str, '', -1);
      }
 }
 class Formatting

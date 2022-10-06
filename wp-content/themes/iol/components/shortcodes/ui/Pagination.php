@@ -2,9 +2,12 @@
 
 function changePageTo($num)
 {
-     $query = PageHandler::getQueryParams();
+     $ph = new PageHandler;
+     $query = $ph->getQueryParams([
+          'url', 'paged'
+     ]);
      $query['paged'] = $num;
-     return PageHandler::toQuery($query);
+     return $ph->toQuery($query);
 }
 function renderSearchPagination($args = [
      'max_num_pages' => '',
@@ -20,10 +23,7 @@ function renderSearchPagination($args = [
      <div class="flex flex-row center-items flex-center">
           <div class="pagination-icons ph-04">
                <a class="<?php echo $currPage == 1 ? 'disabled' : 'pl-05' ?>" href='<?php echo changePageTo(1) ?>'>[IconFirst]</a>
-
                <?php echo $currPage == 1  ? '<a class="ph-1 disabled">  ' . do_shortcode('[IconPrevious]') . '</a>' : '<a href="' . changePageTo(-1) . '">' . do_shortcode('[IconPrevious]') . '</a>' ?>
-
-
           </div>
           <?php for ($i = max($currPage - 3, 1); $i <= min($args['max_num_pages'], $currPage + 3); $i++) {
                if ($i == $currPage) { ?>
@@ -78,8 +78,8 @@ function renderPagination($pages = null, $options = [
 
           <div class="flex flex-row center-items mv-2 flex-center">
                <div class="pagination-icons ph-04">
-                    <a href="<?php echo $permalink ?>" class="<?php echo $pagenum !== 0 ?: 'disabled' ?>">[IconFirst]</a>
-                    <?php if (!get_query_var('paged')) { ?>
+                    <a href="<?php echo $permalink ?>" class="<?php echo $pagenum == 1 ? 'disabled' : "" ?>">[IconFirst]</a>
+                    <?php if (get_query_var('paged', 1) == 1) { ?>
                          <a class="ph-1 disabled">[IconPrevious]</a>
                     <?php
                     } ?>

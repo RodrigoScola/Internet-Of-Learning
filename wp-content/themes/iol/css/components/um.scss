@@ -19,6 +19,69 @@
 
 }
 
+.um-profile.um-viewing {
+
+.um-header.no-cover {
+ display: flex;
+  // image
+  
+  .um-profile-photo {
+    margin: 0 !important;
+  grid-area: 'image';    
+        width: fit-content !important;
+        order: 1;
+  }
+  .um-profile-headericon {
+    padding-left: 1em ;
+    padding-top: 0.2em;
+    
+    .um-dropdown {
+      position: static !important;
+      &-b {
+        ul {
+          li:nth-of-type(3) {
+            background-color: $red !important;
+            a {
+              color: #FFFFFF;
+            }
+          }
+        }
+      }
+    }
+    float: left;
+    position: static !important;
+    // background-color: black;
+    order: 3;
+  }
+  .um-profile-meta {
+    order: 2;
+    padding-right: 2em;
+    margin-left: 2em;
+    .um-main-meta {
+      // username
+      .um-name {
+        a {
+          font-size: 48px;
+
+        font-family: "Roboto Slab" !important;
+        }
+        width: fit-content !important;
+      text-transform: capitalize;
+        grid-area: "username";
+      }
+      // description
+    }
+      .um-meta-text {
+        width: fit-content !important;
+  text-transform: capitalize;
+  font-size: large !important;
+  text-align: left !important;
+        grid-area: "description"; 
+      }
+  }
+}
+}
+
 #um-submit-btn {
   @extend .btn;
   min-width: max-content !important;

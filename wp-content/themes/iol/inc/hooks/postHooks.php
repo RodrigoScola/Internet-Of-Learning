@@ -23,6 +23,12 @@ add_action('iol_before_post', function () {
 // iol_before_post
 // iol_before_post_{post-type}
 
+
+add_filter('um_profile_navbar_classes', function () {
+     return 'bg';
+}, 10, 2);
+
+
 add_action('iol_before_post_category_business', function () {
 }, 10, 2);
 
